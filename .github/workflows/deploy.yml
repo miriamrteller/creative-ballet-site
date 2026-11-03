@@ -1,0 +1,64 @@
+# Deploys the site to the EXISTING Cloudflare Pages project that serves
+# creativeballetacademy.com. It never creates a new project, so the custom
+# domain stays attached.
+#
+# Every run waits in the "production" environment until the owner approves it
+# (Settings → Environments → production → Required reviewers).
+
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One deploy at a time. A newer push waits instead of cancelling a deploy in progress.
+concurrency:
+  group: cloudflare-pages-production
+  cancel-in-progress: false
+
+env:
+  # The existing Pages project that serves creativeballetacademy.com
+  # (Cloudflare dashboard → Workers & Pages).
+  PAGES_PROJECT_NAME: creative-ballet-academy
+  # Must match the project's production branch, or the upload becomes a
+  # preview instead of going live. "main" is the default for uploaded projects.
+  PAGES_PRODUCTION_BRANCH: main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://creativeballetacademy.com
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the Pages project name is set
+        run: |
+          if [ "$PAGES_PROJECT_NAME" = "REPLACE_WITH_PAGES_PROJECT_NAME" ] || [ -z "$PAGES_PROJECT_NAME" ]; then
+            echo "::error file=.github/workflows/deploy.yml::Set PAGES_PROJECT_NAME to the existing Cloudflare Pages project name."
+            exit 1
+          fi
+
+      # Upload only committed website files, not repo files like .github or README.md.
+      - name: Collect site files
+        run: |
+          mkdir -p "$RUNNER_TEMP/site"
+          git archive HEAD | tar -x -C "$RUNNER_TEMP/site"
+          rm -rf "$RUNNER_TEMP/site/.github" "$RUNNER_TEMP/site/README.md"
+          find "$RUNNER_TEMP/site" -type f | sort
+
+      - name: Deploy with wrangler
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: >-
+            pages deploy ${{ runner.temp }}/site
+            --project-name=${{ env.PAGES_PROJECT_NAME }}
+            --branch=${{ env.PAGES_PRODUCTION_BRANCH }}
+            --commit-dirty=true
