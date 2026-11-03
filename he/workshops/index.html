@@ -109,16 +109,15 @@
     color: var(--text-body);
     background: var(--misty-white);
     line-height: 1.6;
-    direction: rtl;
   }
   a { color: inherit; }
 
   .skip-link {
-    position: absolute; right: -9999px; top: 0;
+    position: absolute; inset-inline-start: 0; transform: translateY(-100%); top: 0;
     background: #fff; color: var(--text-dark);
-    padding: 12px 20px; z-index: 1000; border-radius: 0 0 0 8px;
+    padding: 12px 20px; z-index: 1000; border-end-start-radius: 8px;
   }
-  .skip-link:focus { right: 0; }
+  .skip-link:focus { transform: none; }
 
   header {
     display: flex; align-items: center; justify-content: space-between;
@@ -133,12 +132,12 @@
   }
   nav a {
     text-decoration: none; color: #f4c8d9; font-weight: 600;
-    margin-right: 28px; font-size: 0.95rem;
+    margin-inline-start: 28px; font-size: 0.95rem;
   }
   nav a:hover, nav a:focus { color: #fff; }
   nav a[aria-current="page"] { color: #fff; border-bottom: 2px solid var(--petal-pink); padding-bottom: 2px; }
   .lang-switch {
-    margin-right: 28px; padding: 5px 14px;
+    margin-inline-start: 28px; padding: 5px 14px;
     border: 1px solid rgba(244,198,217,0.6); border-radius: 999px;
     font-size: 0.85rem !important;
   }
@@ -244,15 +243,15 @@
   }
   .price-card .launch s { opacity: 0.6; font-weight: 600; }
   .price-card ul {
-    list-style: none; padding: 0; margin: 18px 0 22px; text-align: right; flex-grow: 1;
+    list-style: none; padding: 0; margin: 18px 0 22px; text-align: start; flex-grow: 1;
   }
   .price-card ul li {
-    padding: 7px 30px 7px 0; position: relative; font-size: 0.98rem;
+    padding-block: 7px; padding-inline: 30px 0; position: relative; font-size: 0.98rem;
     border-bottom: 1px solid rgba(74,59,77,0.07);
   }
   .price-card ul li:last-child { border-bottom: none; }
   .price-card ul li::before {
-    content: "✦"; position: absolute; right: 4px; color: var(--petal-pink); font-size: 0.9rem;
+    content: "✦"; position: absolute; inset-inline-start: 4px; color: var(--petal-pink); font-size: 0.9rem;
   }
   .price-card .card-cta { margin-top: auto; }
   .price-note { text-align: center; font-size: 0.92rem; margin-top: 26px; color: var(--text-body); }
@@ -278,7 +277,7 @@
   .theme-card {
     background: #fff; border-radius: 16px; padding: 22px 20px;
     box-shadow: 0 4px 14px rgba(74,59,77,0.07);
-    border-right: 4px solid var(--sky-blue);
+    border-inline-start: 4px solid var(--sky-blue);
   }
   .theme-card h4 {
     font-family: 'David Libre', serif; color: var(--text-dark);
@@ -313,7 +312,7 @@
     background: #fff; border: 1px solid #ecd7e4; border-radius: 18px; padding: 24px 24px;
   }
   .idea-block h4 { font-family: 'David Libre', serif; color: var(--text-dark); font-size: 1.15rem; margin: 0 0 12px; }
-  .idea-block ul { margin: 0; padding-right: 20px; color: var(--text-dark); }
+  .idea-block ul { margin: 0; padding-inline-start: 20px; color: var(--text-dark); }
   .idea-block li { font-size: 0.95rem; margin-bottom: 7px; line-height: 1.4; }
   @media (max-width: 760px) { .ideas-grid { grid-template-columns: 1fr; } }
 
@@ -340,7 +339,7 @@
 
   .contact-form {
     display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
-    max-width: 640px; margin: 0 auto; text-align: right;
+    max-width: 640px; margin: 0 auto; text-align: start;
   }
   .form-row-full { grid-column: 1 / -1; }
   .contact-form label {
@@ -369,7 +368,7 @@
 
   @media (max-width: 640px) {
     header { padding: 16px 5vw; }
-    nav a { margin-right: 14px; font-size: 0.82rem; }
+    nav a { margin-inline-start: 14px; font-size: 0.82rem; }
     section { padding: 60px 5vw; }
   }
 </style>
@@ -594,7 +593,7 @@
       <h2 id="book-heading">בואי נתכנן משהו יפה</h2>
       <p>ספרי לנו על החגיגה שלך וניצור קשר כדי להחיות אותה.</p>
       <form id="contact-form" class="contact-form" aria-label="טופס פנייה לחגיגה">
-        <div style="position:absolute;left:-9999px;top:auto;height:1px;overflow:hidden" aria-hidden="true"><label for="cba-website">Website</label><input id="cba-website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div style="position:absolute;inset-inline-start:0;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap" aria-hidden="true"><label for="cba-website">Website</label><input id="cba-website" type="text" tabindex="-1" autocomplete="off"></div>
         <div class="form-row">
           <label for="parent-name">השם שלך</label>
           <input type="text" id="parent-name" name="parent-name" required>
