@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Ballet Academy — Ballet Classes in Jerusalem</title>
+<meta name="description" content="Ballet chug for girls in Jerusalem — Shaarei Chesed, Rechavia &amp; Nachlaot. Nurture her confidence, poise, and joy of movement. Ages 3–18+.">
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Creative Ballet Academy — Ballet Classes in Jerusalem">
+<meta property="og:description" content="Ballet chug for girls in Jerusalem — Shaarei Chesed, Rechavia &amp; Nachlaot. Nurture her confidence, poise, and joy of movement. Ages 3–18+.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://creativeballetacademy.com">
+<meta property="og:image" content="https://creativeballetacademy.com/assets/hero-scarf-optimized.jpg">
+<meta property="og:locale" content="en_IL">
+<meta property="og:locale:alternate" content="he_IL">
+
+<!-- hreflang -->
+<link rel="alternate" hreflang="en" href="https://creativeballetacademy.com/">
+<link rel="alternate" hreflang="he" href="https://creativeballetacademy.com/he/">
+<link rel="alternate" hreflang="x-default" href="https://creativeballetacademy.com/">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "additionalType": "https://schema.org/DanceSchool",
+  "name": "Creative Ballet Academy",
+  "url": "https://creativeballetacademy.com",
+  "description": "Creative Ballet Academy offers nurturing ballet classes in Jerusalem for girls, fostering confidence and poise through creative movement.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Jerusalem",
+    "addressCountry": "IL"
+  },
+  "telephone": "+972584421987",
+  "email": "info@creativeballetacademy.com",
+  "priceRange": "$$",
+  "image": "https://creativeballetacademy.com/assets/hero-scarf-optimized.jpg",
+  "logo": "https://creativeballetacademy.com/assets/logo-favicon.png",
+  "areaServed": [
+    { "@type": "Place", "name": "Shaarei Chesed, Jerusalem" },
+    { "@type": "Place", "name": "Rechavia, Jerusalem" },
+    { "@type": "Place", "name": "Nachlaot, Jerusalem" },
+    { "@type": "Place", "name": "Jerusalem" }
+  ]
+}
+</script>
+
+<link rel="icon" type="image/png" href="assets/logo-favicon.png?v=13">
+<link href="/assets/fonts/fonts-1.css" rel="stylesheet">
+<style>
+  :root {
+    --sky-blue: #A4C8E1;
+    --misty-white: #FDF3F6;
+    --petal-pink: #F4C8D9;
+    --lavender: #E0C3E8;
+    --mint: #A5E1DA;
+    --lilac: #D6C6E9;
+    --text-dark: #4A3B4D;
+    --text-body: #5A4E5C;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--text-body);
+    background: var(--misty-white);
+    line-height: 1.6;
+  }
+
+  a { color: inherit; }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: #fff;
+    color: var(--text-dark);
+    padding: 12px 20px;
+    z-index: 1000;
+    border-radius: 0 0 8px 0;
+  }
+  .skip-link:focus { left: 0; }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 6vw;
+    background: var(--text-dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+
+  .brand img {
+    height: 48px;
+    width: auto;
+  }
+
+  .brand-name {
+    font-family: 'Alex Brush', cursive;
+    font-weight: 400;
+    font-size: 2rem;
+    color: #f4c8d9;
+    line-height: 1;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #f4c8d9;
+    font-weight: 600;
+    margin-left: 28px;
+    font-size: 0.95rem;
+  }
+  nav a:hover, nav a:focus { color: #fff; }
+
+  .lang-switch {
+    margin-left: 28px;
+    padding: 5px 14px;
+    border: 1px solid rgba(244,198,217,0.6);
+    border-radius: 999px;
+    font-size: 0.85rem !important;
+  }
+  .lang-switch:hover, .lang-switch:focus {
+    border-color: #fff;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .hero {
+    position: relative;
+    text-align: center;
+    padding: 158px 6vw 178px;
+    background-image: linear-gradient(160deg, rgba(164,200,225,0.55) 0%, rgba(240,244,248,0.72) 55%, rgba(244,200,217,0.6) 100%), url('assets/hero-scarf-optimized.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    overflow: hidden;
+    max-width: none;
+    width: 100%;
+    margin: 0;
+  }
+
+  .hero h1 {
+    font-family: 'Alex Brush', cursive;
+    font-weight: 400;
+    font-size: clamp(3.6rem, 10vw, 7rem);
+    color: var(--text-dark);
+    margin: 0 0 6px;
+    line-height: 1;
+    text-shadow: 0 2px 18px rgba(255,255,255,0.7);
+  }
+
+  .hero .tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--text-dark);
+    margin: 0 0 10px;
+    text-shadow: 0 1px 12px rgba(255,255,255,0.6);
+  }
+
+  .hero .subhead {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    color: #33475a;
+    margin: 0 0 36px;
+    text-shadow: 0 1px 10px rgba(255,255,255,0.6);
+  }
+
+  .join-section .cta-section {
+    text-align: center;
+  }
+
+  .contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 640px;
+    margin: 36px auto 0;
+    text-align: left;
+  }
+
+  .form-row-full {
+    grid-column: 1 / -1;
+  }
+
+  .contact-form label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #d9c3d3;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    background: #fff;
+    color: var(--text-dark);
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: 3px solid var(--petal-pink);
+    outline-offset: 1px;
+  }
+
+  .contact-submit {
+    grid-column: 1 / -1;
+    border: none;
+    cursor: pointer;
+    justify-self: center;
+    margin-top: 6px;
+  }
+
+  @media (max-width: 600px) {
+    .contact-form { grid-template-columns: 1fr; }
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: #8a4a76;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 999px;
+    font-size: 1.05rem;
+    box-shadow: 0 8px 20px rgba(138,74,118,0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .hero-cta:hover, .hero-cta:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(138,74,118,0.45);
+    background: #7a3f68;
+  }
+
+  section {
+    padding: 80px 6vw;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin-bottom: 12px;
+  }
+
+  .section-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 56px;
+    font-size: 1.1rem;
+  }
+
+  .welcome {
+    text-align: center;
+    background: #fff;
+  }
+  .welcome p {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+  }
+
+  .why-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 36px 28px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(74,59,77,0.08);
+    border-top: 4px solid var(--lavender);
+  }
+  .why-card:nth-child(2) { border-top-color: var(--petal-pink); }
+  .why-card:nth-child(3) { border-top-color: var(--mint); }
+
+  .why-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-dark);
+    font-size: 1.35rem;
+    margin: 0 0 14px;
+  }
+
+  .programs {
+    background: #fff;
+  }
+
+  .program-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 26px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .program-card {
+    background: var(--misty-white);
+    border-radius: 18px;
+    padding: 28px 24px;
+  }
+
+  .program-card .age {
+    display: inline-block;
+    background: var(--lilac);
+    color: #5b3d63;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+
+  .program-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-dark);
+    font-size: 1.3rem;
+    margin: 0 0 10px;
+  }
+
+  .program-card p {
+    margin: 0;
+    font-size: 0.98rem;
+  }
+
+  .cta-section {
+    text-align: center;
+    background: linear-gradient(160deg, var(--lavender) 0%, var(--sky-blue) 100%);
+    border-radius: 28px;
+    margin: 0 6vw 0;
+    max-width: 1100px;
+    padding: 70px 6vw;
+  }
+
+  .cta-section h2 {
+    font-family: 'Alex Brush', cursive;
+    font-weight: 400;
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    margin-bottom: 6px;
+  }
+
+  .cta-section p {
+    font-size: 1.15rem;
+    max-width: 550px;
+    margin: 0 auto 34px;
+    color: #3f2f47;
+  }
+
+  footer {
+    text-align: center;
+    padding: 50px 6vw 60px;
+    background: var(--text-dark);
+    color: #f0e6f2;
+  }
+
+  footer .footer-tagline {
+    font-family: 'Alex Brush', cursive;
+    font-size: 2rem;
+    margin: 0 0 14px;
+    color: #f4c8d9;
+  }
+
+  footer .footer-meta {
+    font-size: 0.9rem;
+    opacity: 0.85;
+  }
+
+  @media (max-width: 640px) {
+    header { padding: 16px 5vw; }
+    nav a { margin-left: 16px; font-size: 0.85rem; }
+    section { padding: 60px 5vw; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header>
+  <a class="brand" href="#top" aria-label="Creative Ballet Academy home">
+    <img src="assets/logo-header.png?v=13" alt="Creative Ballet Academy logo" width="48" height="48">
+    <span class="brand-name">Creative Ballet Academy</span>
+  </a>
+  <nav aria-label="Primary navigation">
+    <a href="#why">Our Dance</a>
+    <a href="#programs">Programs</a>
+    <a href="#join">Enroll</a>
+    <a href="/workshops/">Workshops</a>
+    <a href="/he/" class="lang-switch" id="lang-switch" lang="he" hreflang="he">עברית</a>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <section class="hero" id="top">
+    <h1>Creative Ballet Academy</h1>
+    <p class="tagline">Empowering Young Dancers Through Creative Movement</p>
+    <p class="subhead">After-school ballet in Jerusalem — nurturing confidence, poise, and the joy of movement for girls ages 3–18+</p>
+    <a class="hero-cta" href="#join">Begin Her Journey</a>
+  </section>
+
+  <section class="welcome" aria-labelledby="welcome-heading">
+    <h2 id="welcome-heading">A Nurturing Embrace for Growth</h2>
+    <p>Welcome to Creative Ballet Academy, a nurturing environment where young girls are invited to delve into the art of ballet, celebrating each one's authentic self. Here, your daughter will blossom as she discovers radiant confidence and lets her heart sing through movement.</p>
+  </section>
+
+  <section class="why" id="why" aria-labelledby="why-heading">
+    <h2 id="why-heading">Unleash Your Inner Dancer</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>Radiant Confidence</h3>
+        <p>Cultivate self-assurance through ballet, letting her inner dance lead her on a journey of discovery and growth.</p>
+      </div>
+      <div class="why-card">
+        <h3>Poise &amp; Grace</h3>
+        <p>Watch her flourish into elegance, mastering the art of ballet with graceful strength and composed beauty.</p>
+      </div>
+      <div class="why-card">
+        <h3>Creative Storytelling &amp; Freedom</h3>
+        <p>Encourage her imagination and self-expression, offering the freedom to weave stories through the joyful language of dance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="programs" id="programs" aria-labelledby="programs-heading">
+    <h2 id="programs-heading">Class Programs</h2>
+    <p class="section-intro">A graceful path for every age, each one designed to nurture her unfolding artistry.</p>
+    <ul class="program-list">
+      <li class="program-card">
+        <span class="age">Ages 3–5</span>
+        <h3>Fairy Tale Dancers</h3>
+        <p>A magical first step into ballet, where every twirl brings stories to life.</p>
+      </li>
+      <li class="program-card">
+        <span class="age">Ages 6–8</span>
+        <h3>Garden Ballet</h3>
+        <p>Nurture her passion for dance in a garden filled with movement and grace.</p>
+      </li>
+      <li class="program-card">
+        <span class="age">Ages 9–11</span>
+        <h3>Starlight Academy</h3>
+        <p>Reach for new heights as she hones her technique and shines ever brighter.</p>
+      </li>
+      <li class="program-card">
+        <span class="age">Ages 12–14</span>
+        <h3>Grace &amp; Artistry</h3>
+        <p>Cultivate her artistic voice through refined skill and expressive elegance.</p>
+      </li>
+      <li class="program-card">
+        <span class="age">Ages 15–18+</span>
+        <h3>Ethereal Elegance</h3>
+        <p>Where dreams ascend through graceful expression and artistry beyond words.</p>
+      </li>
+      <li class="program-card">
+        <span class="age">All Ages</span>
+        <h3>Imagination in Motion Workshops</h3>
+        <p>Unleash creativity and explore new horizons with themed dance experiences.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="bring-ballet" aria-labelledby="bring-ballet-heading" style="text-align:center;">
+    <h2 id="bring-ballet-heading">Bring Ballet to Your Neighbourhood</h2>
+    <p>Creative Ballet Academy brings the grace of ballet to community centres, schools, and private venues across Jerusalem. Whether in Shaarei Chesed, Rechavia, Nachlaot, or a neighbourhood nearby — we would love to bring the joy of dance to your community.</p>
+    <a class="hero-cta" href="#join" style="margin-top:18px; display:inline-block;">Get in Touch</a>
+  </section>
+
+  <section id="join" aria-labelledby="cta-heading" class="join-section">
+    <div class="cta-section">
+      <h2 id="cta-heading">Commence Her Journey of Graceful Discovery</h2>
+      <p>Discover more about how your child can flourish with us by reaching out today.</p>
+      <form id="contact-form" class="contact-form" aria-label="Contact form">
+        <div style="position:absolute;left:-9999px;top:auto;height:1px;overflow:hidden" aria-hidden="true"><label for="cba-website">Website</label><input id="cba-website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="form-row">
+          <label for="parent-name">Parent Name</label>
+          <input type="text" id="parent-name" name="parent-name" required>
+        </div>
+        <div class="form-row">
+          <label for="child-age">Child's Age</label>
+          <input type="text" id="child-age" name="child-age" required>
+        </div>
+        <div class="form-row">
+          <label for="parent-email">Email</label>
+          <input type="email" id="parent-email" name="parent-email" required>
+        </div>
+        <div class="form-row">
+          <label for="parent-phone">Phone</label>
+          <input type="tel" id="parent-phone" name="parent-phone">
+        </div>
+        <div class="form-row form-row-full">
+          <label for="parent-message">Message</label>
+          <textarea id="parent-message" name="parent-message" rows="4"></textarea>
+        </div>
+        <button type="submit" class="hero-cta contact-submit">Send Inquiry</button>
+        <p id="contact-form-status" role="status" aria-live="polite" style="margin-top:12px; font-size:0.95rem;"></p>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var statusEl = document.getElementById('contact-form-status');
+      var submitBtn = document.querySelector('.contact-submit');
+      var name = document.getElementById('parent-name').value;
+      var age = document.getElementById('child-age').value;
+      var email = document.getElementById('parent-email').value;
+      var phone = document.getElementById('parent-phone').value;
+      var message = document.getElementById('parent-message').value;
+
+      submitBtn.disabled = true;
+      statusEl.style.color = '';
+      statusEl.textContent = 'Sending...';
+
+      fetch('https://acmujrhavgbamdilzuew.supabase.co/functions/v1/crm-lead-capture', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          tenantSubdomain: 'creativeballet',
+          name: name,
+          email: email || null,
+          phone: phone || null,
+          message: (age ? 'Child age: ' + age + (message ? ' | ' + message : '') : (message || null)),
+          src: 'website',
+          website: (document.getElementById('cba-website') || {}).value || null
+        })
+      }).then(function(res) {
+        submitBtn.disabled = false;
+        if (res.ok) {
+          statusEl.style.color = '#3a6b4a';
+          statusEl.textContent = 'Thank you! Your message has been sent — we\'ll be in touch soon.';
+          document.getElementById('contact-form').reset();
+        } else {
+          statusEl.style.color = '#a4373a';
+          statusEl.textContent = 'Something went wrong. Please email us directly at info@creativeballetacademy.com.';
+        }
+      }).catch(function() {
+        submitBtn.disabled = false;
+        statusEl.style.color = '#a4373a';
+        statusEl.textContent = 'Something went wrong. Please email us directly at info@creativeballetacademy.com.';
+      });
+    });
+  </script>
+
+</main>
+
+<footer>
+  <p class="footer-tagline">Dance Into a World Where Her Heart Can Sing</p>
+  <p class="footer-meta">&copy; 2026 Creative Ballet Academy. All rights reserved.</p>
+</footer>
+
+<script>
+  document.getElementById('lang-switch').addEventListener('click', function () {
+    document.cookie = 'lang_pref=en; path=/; max-age=' + (60 * 60 * 24 * 365);
+  });
+</script>
+</body>
+</html>
