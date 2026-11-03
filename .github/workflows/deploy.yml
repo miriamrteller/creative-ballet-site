@@ -21,10 +21,9 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  # ⚠️ PLACEHOLDER: replace with the name of the existing Pages project
-  # (Cloudflare dashboard → Workers & Pages → the project that serves
-  # creativeballetacademy.com). The deploy stops until this is set.
-  PAGES_PROJECT_NAME: REPLACE_WITH_PAGES_PROJECT_NAME
+  # The existing Pages project that serves creativeballetacademy.com
+  # (Cloudflare dashboard → Workers & Pages).
+  PAGES_PROJECT_NAME: creative-ballet-academy
   # Must match the project's production branch, or the upload becomes a
   # preview instead of going live. "main" is the default for uploaded projects.
   PAGES_PRODUCTION_BRANCH: main
