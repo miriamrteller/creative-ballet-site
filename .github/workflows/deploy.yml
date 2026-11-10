@@ -1,7 +1,8 @@
 # Publish the site to Cloudflare Pages on every push to main.
 # One-time setup (GitHub → Settings → Secrets and variables → Actions):
 #   secret   CLOUDFLARE_API_TOKEN   token with "Cloudflare Pages: Edit"
-#   variable CF_PAGES_PROJECT       the Pages project name serving creativeballetacademy.com
+#   variable CF_PAGES_PROJECT       optional: Pages project name. If unset, the project serving
+#                                   creativeballetacademy.com is found automatically.
 name: deploy
 on:
   push:
@@ -20,15 +21,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check setup
+      - name: Check setup and find the Pages project
+        id: setup
         env:
           TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           PROJECT: ${{ vars.CF_PAGES_PROJECT }}
         run: |
-          if [ -z "$TOKEN" ] || [ -z "$PROJECT" ]; then
-            echo "::error::Deploy is not set up yet: add CLOUDFLARE_API_TOKEN and CF_PAGES_PROJECT (see the top of this file)."
+          if [ -z "$TOKEN" ]; then
+            echo "::error::Deploy is not set up yet: add the CLOUDFLARE_API_TOKEN secret (see the top of this file)."
             exit 1
           fi
+          if [ -z "$PROJECT" ]; then
+            PROJECT=$(curl -fsS -H "Authorization: Bearer $TOKEN" \
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects?per_page=50" \
+              | jq -r '[.result[] | select((.domains // []) | index("creativeballetacademy.com") or index("www.creativeballetacademy.com"))][0].name // empty')
+          fi
+          if [ -z "$PROJECT" ]; then
+            echo "::error::No Pages project serves creativeballetacademy.com. Set the CF_PAGES_PROJECT variable."
+            exit 1
+          fi
+          echo "Deploying to Pages project: $PROJECT"
+          echo "project=$PROJECT" >> "$GITHUB_OUTPUT"
       - name: Copy site files (leave out repo-only files)
         run: |
           mkdir -p dist
@@ -36,4 +49,4 @@ jobs:
       - name: Deploy to Cloudflare Pages
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: npx --yes wrangler@4 pages deploy dist --project-name "${{ vars.CF_PAGES_PROJECT }}" --branch main --commit-dirty=true
+        run: npx --yes wrangler@4 pages deploy dist --project-name "${{ steps.setup.outputs.project }}" --branch main --commit-dirty=true
