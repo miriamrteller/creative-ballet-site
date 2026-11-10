@@ -194,3 +194,13 @@ section[id] { scroll-margin-top: 84px; }
 
 /* RAD teacher badge in the footer */
 .rad-badge { display: flex; flex-direction: column; align-items: center; gap: 6px; margin: 0 0 12px; font-size: 0.9rem; font-weight: 600; color: #f4c8d9; text-align: center; }
+
+/* Balanced tile grids: never leave a lone tile on its own row */
+.program-list, .steps { grid-template-columns: 1fr !important; }
+@media (min-width: 560px) { .program-list, .steps { grid-template-columns: repeat(2, 1fr) !important; } }
+@media (min-width: 1200px) { .program-list, .steps { grid-template-columns: repeat(4, 1fr) !important; } }
+.why-grid, .audience-grid, .pricing-grid, .theme-grid { grid-template-columns: 1fr !important; }
+@media (min-width: 900px) { .why-grid, .audience-grid, .pricing-grid, .theme-grid { grid-template-columns: repeat(3, 1fr) !important; } }
+/* 7 add-ons: wrap and centre the last row */
+.addon-grid { display: flex !important; flex-wrap: wrap; justify-content: center; }
+.addon-grid > * { flex: 0 1 240px; }
