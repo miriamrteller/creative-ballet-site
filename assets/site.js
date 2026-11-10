@@ -77,6 +77,11 @@
       var message = val('parent-message');
       var interest = val('event-type') || val('class-choice') || 'Classes';
       if (grade) message = 'Grade: ' + grade + (message ? ' | ' + message : '');
+      var trial = document.getElementById('trial-class');
+      if (trial && trial.checked) {
+        message = 'Wants the trial class (Tue 1 Dec)' + (message ? ' | ' + message : '');
+        interest = 'Trial class 1 Dec · ' + interest;
+      }
 
       submitBtn.disabled = true;
       show(text.sending, '');
