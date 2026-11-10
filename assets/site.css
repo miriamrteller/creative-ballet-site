@@ -177,3 +177,9 @@ section[id] { scroll-margin-top: 84px; }
 .faq summary::after { content: "+"; position: absolute; inset-inline-end: 22px; top: 14px; font-size: 1.5rem; color: #8a4a76; }
 .faq details[open] summary::after { content: "–"; }
 .faq details p { margin: 0; padding: 0 24px 20px; }
+
+/* OpalSwift form, embedded */
+.opal-form { max-width: 640px; margin: 28px auto 0; }
+.opal-form iframe { display: block; width: 100%; height: 1150px; border: 0; border-radius: 16px; background: #fff; }
+.cta-section .opal-form-open { display: inline-block; margin-top: 10px; font-size: 0.9rem; color: #4A3B4D; }
+@media (max-width: 600px) { .opal-form iframe { height: 1350px; } }

@@ -1,124 +1,42 @@
-/* Creative Ballet Academy: shared page script (enquiry form + language choice).
- * Enquiries go to the studio's OpalSwift leads list (crm-lead-capture). */
+/* Creative Ballet Academy: shared page script.
+ * The sign-up and enquiry forms are OpalSwift's own forms (creativeballet.opalswift.com),
+ * embedded in a frame, so leads land straight in OpalSwift with no extra setup. */
 (function () {
-  var he = document.documentElement.lang === 'he';
-  // OpalSwift production (manage-studio-prod). The dev project is acmujrhavgbamdilzuew: never use it here.
-  var ENDPOINT = 'https://oogxajjanbyqhljxcmql.supabase.co/functions/v1/crm-lead-capture';
-  var EMAIL = 'info@creativeballetacademy.com';
-  var WHATSAPP = 'https://wa.me/972584421987';
+  var OPAL = 'https://creativeballet.opalswift.com';
 
-  var text = he ? {
-    sending: 'שולחת...',
-    thanks: 'תודה! הפנייה התקבלה, ונחזור אלייך בקרוב.',
-    saved: 'תודה! את ברשימה, ונשלח לך הודעה ברגע שההרשמה נפתחת.',
-    needContact: 'נא למלא אימייל או טלפון, כדי שנוכל לחזור אליך.',
-    spam: 'לא הצלחנו לשלוח. נא לבדוק את השם וההודעה ולנסות שוב.',
-    failed: 'משהו השתבש. אפשר לכתוב לנו בוואטסאפ או במייל ל-' + EMAIL + '.'
-  } : {
-    sending: 'Sending...',
-    thanks: "Thank you! We've received your message and will be in touch soon.",
-    saved: "Thank you! You're on the list, and we'll let you know the moment enrolment opens.",
-    needContact: 'Please add an email or a phone number so we can get back to you.',
-    spam: "We couldn't send that. Please check your name and message and try again.",
-    failed: 'Something went wrong. Please message us on WhatsApp or email ' + EMAIL + '.'
-  };
-
-  // Remember where the visitor came from (?src=instagram&campaign=chanuka, or utm_*),
-  // so the lead shows its channel and campaign in OpalSwift.
-  function rememberSource() {
+  // Where the visitor came from (?src=instagram&campaign=chanuka, or utm_*), kept for the visit,
+  // so OpalSwift shows the lead's channel and campaign.
+  function tag(names, key) {
     try {
       var q = new URLSearchParams(location.search);
-      var src = q.get('src') || q.get('utm_source');
-      var campaign = q.get('campaign') || q.get('utm_campaign');
-      if (src) sessionStorage.setItem('cba_src', src.slice(0, 40));
-      if (campaign) sessionStorage.setItem('cba_campaign', campaign.slice(0, 500));
-    } catch (e) { /* storage blocked: fine */ }
-  }
-  function stored(key) {
-    try { return sessionStorage.getItem(key); } catch (e) { return null; }
-  }
-  rememberSource();
-
-  function val(id) {
-    var el = document.getElementById(id);
-    return el && el.value.trim() ? el.value.trim() : null;
-  }
-
-  var form = document.getElementById('contact-form');
-  if (form) {
-    var openedAt = Date.now();
-    var statusEl = document.getElementById('contact-form-status');
-    var submitBtn = form.querySelector('.contact-submit');
-
-    function show(message, kind, withWhatsApp) {
-      statusEl.className = 'form-status' + (kind ? ' ' + kind : '');
-      statusEl.textContent = message;
-      if (withWhatsApp) {
-        var a = document.createElement('a');
-        a.href = WHATSAPP;
-        a.className = 'status-whatsapp';
-        a.textContent = he ? 'לוואטסאפ' : 'Open WhatsApp';
-        a.target = '_blank';
-        a.rel = 'noopener';
-        statusEl.appendChild(document.createTextNode(' '));
-        statusEl.appendChild(a);
+      for (var i = 0; i < names.length; i++) {
+        var v = q.get(names[i]);
+        if (v) { sessionStorage.setItem(key, v.slice(0, 200)); return v; }
       }
-    }
+      return sessionStorage.getItem(key);
+    } catch (e) { return null; }
+  }
+  var src = tag(['src', 'utm_source'], 'cba_src') || 'website';
+  var campaign = tag(['campaign', 'utm_campaign'], 'cba_campaign');
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var email = val('parent-email');
-      var phone = val('parent-phone');
-      if (!email && !phone) {
-        show(text.needContact, 'error');
-        document.getElementById('parent-email').focus();
-        return;
-      }
-
-      // Home page: child's grade + which class. Workshops page: celebration type.
-      var grade = val('child-grade');
-      var message = val('parent-message');
-      var interest = val('event-type') || val('class-choice') || 'Classes';
-      if (grade) message = 'Grade: ' + grade + (message ? ' | ' + message : '');
-      var trial = document.getElementById('trial-class');
-      if (trial && trial.checked) {
-        message = 'Wants the trial class (Tue 1 Dec)' + (message ? ' | ' + message : '');
-        interest = 'Trial class 1 Dec · ' + interest;
-      }
-
-      submitBtn.disabled = true;
-      show(text.sending, '');
-
-      fetch(ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          tenantSubdomain: 'creativeballet',
-          name: val('parent-name'),
-          email: email,
-          phone: phone,
-          message: message,
-          interest: interest.slice(0, 200),
-          src: stored('cba_src') || 'website',
-          campaign: stored('cba_campaign'),
-          elapsedMs: Date.now() - openedAt,
-          website: val('cba-website')
-        })
-      }).then(function (res) {
-        submitBtn.disabled = false;
-        if (res.ok) {
-          show(document.getElementById('class-choice') ? text.saved : text.thanks, 'ok');
-          form.reset();
-        } else if (res.status === 422) {
-          show(text.spam, 'error');
-        } else {
-          show(text.failed, 'error', true);
-        }
-      }).catch(function () {
-        submitBtn.disabled = false;
-        show(text.failed, 'error', true);
-      });
-    });
+  var boxes = document.querySelectorAll('.opal-form');
+  for (var i = 0; i < boxes.length; i++) {
+    var box = boxes[i];
+    var params = new URLSearchParams({ src: src, lang: box.getAttribute('data-lang') || 'en' });
+    if (campaign) params.set('campaign', campaign);
+    var path = '/f/' + box.getAttribute('data-form');
+    var frame = document.createElement('iframe');
+    frame.src = OPAL + '/embed' + path + '?' + params.toString();
+    frame.title = box.getAttribute('data-title') || 'Form';
+    frame.loading = 'lazy';
+    box.appendChild(frame);
+    var open = document.createElement('a');
+    open.className = 'opal-form-open';
+    open.href = OPAL + path + '?' + params.toString();
+    open.target = '_blank';
+    open.rel = 'noopener';
+    open.textContent = box.getAttribute('data-lang') === 'he' ? 'הטופס לא נטען? לפתיחה בחלון חדש' : "Form not showing? Open it in a new tab";
+    box.appendChild(open);
   }
 
   // The language button remembers the language the visitor is switching TO.

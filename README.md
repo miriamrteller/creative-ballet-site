@@ -18,7 +18,11 @@ Served by Cloudflare Pages. Files are deployed as-is (no build step).
 
 ## Enquiry forms
 
-The forms send leads to OpalSwift production (studio `creativeballet`, Supabase project `oogxajjanbyqhljxcmql`) through the `crm-lead-capture` function. The function only accepts browsers from `*.opalswift.com` and the origin in its `CRM_CONTACTS_ALLOWED_ORIGIN` secret, so that secret must include `https://creativeballetacademy.com`.
-Links with `?src=instagram&campaign=chanuka` (or `utm_source` / `utm_campaign`) tag the lead's
-channel and campaign in OpalSwift. Channels OpalSwift knows: email, whatsapp, instagram, facebook,
-google, sms, flyer, linkedin, direct; anything else shows as website.
+The forms are OpalSwift's own named forms, embedded in a frame (`.opal-form` boxes, built by
+`assets/site.js`): `creativeballet.opalswift.com/embed/f/classes` on the home pages and
+`/embed/f/parties` on the workshops pages. Questions are edited in OpalSwift, not here.
+The frame needs no CORS setting.
+
+Links with `?src=instagram&campaign=chanuka` (or `utm_source` / `utm_campaign`) are passed to the
+form, so the lead's channel and campaign show in OpalSwift. Channels OpalSwift knows: email,
+whatsapp, instagram, facebook, google, sms, flyer, linkedin, direct; anything else shows as website.
