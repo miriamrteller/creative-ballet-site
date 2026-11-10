@@ -2,7 +2,7 @@
 
 Static website for Creative Ballet Academy — https://creativeballetacademy.com
 
-Served by Cloudflare Pages. Files are deployed as-is (no build step).
+Served by Cloudflare Pages. Files are deployed as-is (no build step) by `.github/workflows/deploy.yml` on every push to `main` (setup steps at the top of that file).
 
 | Path | Page |
 | --- | --- |
