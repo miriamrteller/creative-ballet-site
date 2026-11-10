@@ -9,13 +9,15 @@
 
   var text = he ? {
     sending: 'שולחת...',
-    thanks: 'תודה! הפנייה התקבלה, ונחזור אליך בקרוב.',
+    thanks: 'תודה! הפנייה התקבלה, ונחזור אלייך בקרוב.',
+    saved: 'תודה! המקום נשמר ברשימה, ונחזור אלייך לאישור.',
     needContact: 'נא למלא אימייל או טלפון, כדי שנוכל לחזור אליך.',
     spam: 'לא הצלחנו לשלוח. נא לבדוק את השם וההודעה ולנסות שוב.',
     failed: 'משהו השתבש. אפשר לכתוב לנו בוואטסאפ או במייל ל-' + EMAIL + '.'
   } : {
     sending: 'Sending...',
     thanks: "Thank you! We've received your message and will be in touch soon.",
+    saved: "Thank you! Your place is saved on our list, and we'll be in touch to confirm it.",
     needContact: 'Please add an email or a phone number so we can get back to you.',
     spam: "We couldn't send that. Please check your name and message and try again.",
     failed: 'Something went wrong. Please message us on WhatsApp or email ' + EMAIL + '.'
@@ -105,7 +107,7 @@
       }).then(function (res) {
         submitBtn.disabled = false;
         if (res.ok) {
-          show(text.thanks, 'ok');
+          show(document.getElementById('class-choice') ? text.saved : text.thanks, 'ok');
           form.reset();
         } else if (res.status === 422) {
           show(text.spam, 'error');
