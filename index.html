@@ -12,7 +12,9 @@
 <meta property="og:description" content="Ballet chug for girls in Jerusalem — Shaarei Chesed, Rechavia &amp; Nachlaot. Nurture her confidence, poise, and joy of movement. Ages 3–18+.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://creativeballetacademy.com">
-<meta property="og:image" content="https://creativeballetacademy.com/assets/hero-scarf-optimized.jpg">
+<meta property="og:image" content="https://creativeballetacademy.com/assets/share-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_IL">
 <meta property="og:locale:alternate" content="he_IL">
 
@@ -38,7 +40,7 @@
   "telephone": "+972584421987",
   "email": "info@creativeballetacademy.com",
   "priceRange": "$$",
-  "image": "https://creativeballetacademy.com/assets/hero-scarf-optimized.jpg",
+  "image": "https://creativeballetacademy.com/assets/share-card.jpg",
   "logo": "https://creativeballetacademy.com/assets/logo-favicon.png",
   "areaServed": [
     { "@type": "Place", "name": "Shaarei Chesed, Jerusalem" },
@@ -525,6 +527,7 @@
         <button type="submit" class="hero-cta contact-submit">Send Inquiry</button>
         <p id="contact-form-status" role="status" aria-live="polite" style="margin-top:12px; font-size:0.95rem;"></p>
       </form>
+      <p class="whatsapp-line" style="margin-top:18px;">Prefer WhatsApp? <a href="https://wa.me/972584421987?text=Hi%2C%20I%27d%20like%20to%20hear%20about%20ballet%20classes" target="_blank" rel="noopener">Message us on WhatsApp</a></p>
     </div>
   </section>
 
@@ -543,6 +546,7 @@
       statusEl.style.color = '';
       statusEl.textContent = 'Sending...';
 
+      var _cbaQ = new URLSearchParams(window.location.search);
       fetch('https://acmujrhavgbamdilzuew.supabase.co/functions/v1/crm-lead-capture', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -552,7 +556,8 @@
           email: email || null,
           phone: phone || null,
           message: (age ? 'Child age: ' + age + (message ? ' | ' + message : '') : (message || null)),
-          src: 'website',
+          src: _cbaQ.get('src') || _cbaQ.get('utm_source') || 'website',
+          campaign: _cbaQ.get('campaign') || _cbaQ.get('utm_campaign') || null,
           website: (document.getElementById('cba-website') || {}).value || null
         })
       }).then(function(res) {

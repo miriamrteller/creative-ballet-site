@@ -12,7 +12,9 @@
 <meta property="og:description" content="Magical ballet birthday parties, bat mitzvah celebrations &amp; women's dance workshops in Jerusalem. We come to you.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://creativeballetacademy.com/workshops/">
-<meta property="og:image" content="https://creativeballetacademy.com/assets/hero-scarf-optimized.jpg">
+<meta property="og:image" content="https://creativeballetacademy.com/assets/share-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_IL">
 <meta property="og:locale:alternate" content="he_IL">
 
@@ -671,7 +673,8 @@
     statusEl.style.color = '';
     statusEl.textContent = 'Sending...';
 
-    fetch('https://acmujrhavgbamdilzuew.supabase.co/functions/v1/crm-lead-capture', {
+    var _cbaQ = new URLSearchParams(window.location.search);
+      fetch('https://acmujrhavgbamdilzuew.supabase.co/functions/v1/crm-lead-capture', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -681,7 +684,8 @@
         email: document.getElementById('parent-email').value || null,
         phone: document.getElementById('parent-phone').value || null,
         message: document.getElementById('parent-message').value || null,
-        src: 'website',
+        src: _cbaQ.get('src') || _cbaQ.get('utm_source') || 'website',
+        campaign: _cbaQ.get('campaign') || _cbaQ.get('utm_campaign') || null,
         website: (document.getElementById('cba-website') || {}).value || null
       })
     }).then(function(res) {
