@@ -2,7 +2,8 @@
  * Enquiries go to the studio's OpalSwift leads list (crm-lead-capture). */
 (function () {
   var he = document.documentElement.lang === 'he';
-  var ENDPOINT = 'https://acmujrhavgbamdilzuew.supabase.co/functions/v1/crm-lead-capture';
+  // OpalSwift production (manage-studio-prod). The dev project is acmujrhavgbamdilzuew: never use it here.
+  var ENDPOINT = 'https://oogxajjanbyqhljxcmql.supabase.co/functions/v1/crm-lead-capture';
   var EMAIL = 'info@creativeballetacademy.com';
   var WHATSAPP = 'https://wa.me/972584421987';
 
