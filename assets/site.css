@@ -193,4 +193,3 @@ section[id] { scroll-margin-top: 84px; }
 
 /* RAD teacher badge in the footer */
 .rad-badge { display: flex; flex-direction: column; align-items: center; gap: 6px; margin: 0 0 12px; font-size: 0.9rem; font-weight: 600; color: #f4c8d9; text-align: center; }
-.rad-badge img { height: 56px; width: auto; }
