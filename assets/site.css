@@ -1,0 +1,157 @@
+/* Creative Ballet Academy: shared additions on top of each page's own styles. */
+
+/* Header "Enroll" button */
+nav a.nav-cta {
+  background: #f4c8d9;
+  color: #4A3B4D;
+  padding: 7px 16px;
+  border-radius: 999px;
+}
+nav a.nav-cta:hover, nav a.nav-cta:focus { background: #fff; color: #4A3B4D; }
+
+/* Small line above the hero title */
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.75);
+  color: #5b3d63;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin: 0 0 22px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-outline {
+  display: inline-block;
+  background: #fff;
+  color: #4A3B4D;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 14px 30px;
+  border-radius: 999px;
+  border: 2px solid #8a4a76;
+  font-size: 1rem;
+}
+.btn-outline:hover, .btn-outline:focus { background: #fdf3f6; }
+
+/* "How it works" steps */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: step;
+}
+.steps li {
+  background: #fff;
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 6px 20px rgba(74,59,77,0.08);
+  counter-increment: step;
+}
+.steps li::before {
+  content: counter(step);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #E0C3E8;
+  color: #4A3B4D;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.steps h3 { margin: 0 0 8px; color: #4A3B4D; font-size: 1.15rem; }
+.steps p { margin: 0; }
+
+/* Contact options under the form */
+.contact-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  justify-content: center;
+  margin-top: 28px;
+  font-weight: 600;
+}
+.contact-options a { color: #4A3B4D; }
+
+.cta-section .form-hint { font-size: 0.85rem; opacity: 0.85; margin: 6px 0 0; max-width: none; text-align: start; }
+.contact-submit { font-family: inherit; }
+
+.contact-form select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #d9c3d3;
+  font: inherit;
+  background: #fff;
+  color: #4A3B4D;
+}
+
+.cta-section .form-status { margin: 12px 0 0; max-width: none; font-size: 0.95rem; grid-column: 1 / -1; text-align: center; }
+.form-status.ok { color: #2f5e3d; }
+.form-status.error { color: #a4373a; }
+.status-whatsapp { font-weight: 700; color: #1f6b45; }
+
+/* Footer links */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  justify-content: center;
+  margin: 0 0 18px;
+}
+.footer-links a { color: #f4c8d9; text-decoration: none; font-weight: 600; }
+.footer-links a:hover, .footer-links a:focus { color: #fff; text-decoration: underline; }
+
+/* WhatsApp button, bottom corner */
+.whatsapp-float {
+  position: fixed;
+  bottom: 18px;
+  inset-inline-end: 18px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #1f7a4d;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+.whatsapp-float:hover, .whatsapp-float:focus { background: #176340; }
+.whatsapp-float svg { width: 22px; height: 22px; flex: none; }
+
+/* Phones: a slimmer header that keeps "Enroll" and the language button */
+@media (max-width: 760px) {
+  header { padding: 10px 4vw !important; gap: 10px; }
+  .brand { gap: 8px; }
+  .brand img { height: 36px; width: 36px; }
+  .brand-name { font-size: 1.35rem !important; }
+  nav { display: flex; align-items: center; gap: 8px; flex-wrap: nowrap; }
+  nav a { margin: 0 !important; font-size: 0.85rem !important; white-space: nowrap; }
+  nav a.nav-hide-mobile { display: none; }
+  .lang-switch { padding: 4px 10px !important; }
+  .hero { padding-top: 64px !important; padding-bottom: 72px !important; }
+  .whatsapp-float span { display: none; }
+  .whatsapp-float { padding: 12px; }
+}
+@media (max-width: 380px) {
+  .brand-name { display: none; }
+}
+
+/* Keep section titles clear of the sticky header when jumping to them */
+section[id] { scroll-margin-top: 84px; }

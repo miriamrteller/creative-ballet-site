@@ -5,18 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ballet Birthday Parties, Bat Mitzvahs &amp; Women's Workshops in Jerusalem | Creative Ballet Academy</title>
 <meta name="description" content="Magical ballet birthday parties, bat mitzvah celebrations &amp; women's dance workshops in Jerusalem. We come to you — Shaarei Chesed, Rechavia, Nachlaot &amp; beyond.">
-<meta name="robots" content="noindex, nofollow">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Ballet Birthday Parties, Bat Mitzvahs &amp; Women's Workshops in Jerusalem">
 <meta property="og:description" content="Magical ballet birthday parties, bat mitzvah celebrations &amp; women's dance workshops in Jerusalem. We come to you.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://creativeballetacademy.com/workshops/">
-<meta property="og:image" content="https://creativeballetacademy.com/assets/hero-scarf-optimized.jpg">
+<meta property="og:image" content="https://creativeballetacademy.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:locale" content="en_IL">
 <meta property="og:locale:alternate" content="he_IL">
 
 <!-- hreflang -->
+<link rel="canonical" href="https://creativeballetacademy.com/workshops/">
 <link rel="alternate" hreflang="en" href="https://creativeballetacademy.com/workshops/">
 <link rel="alternate" hreflang="he" href="https://creativeballetacademy.com/he/workshops/">
 <link rel="alternate" hreflang="x-default" href="https://creativeballetacademy.com/workshops/">
@@ -87,7 +90,10 @@
 }
 </script>
 
-<link rel="icon" type="image/png" href="../assets/logo-favicon.png?v=13">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#4A3B4D">
 <link href="/assets/fonts/fonts-1.css" rel="stylesheet">
 <style>
   :root {
@@ -146,7 +152,7 @@
   .hero {
     position: relative; text-align: center;
     padding: 130px 6vw 150px;
-    background-image: linear-gradient(160deg, rgba(164,200,225,0.55) 0%, rgba(240,244,248,0.72) 55%, rgba(244,200,217,0.6) 100%), url('../assets/hero-scarf-optimized.jpg');
+    background-image: linear-gradient(160deg, rgba(164,200,225,0.55) 0%, rgba(240,244,248,0.72) 55%, rgba(244,200,217,0.6) 100%);
     background-size: cover; background-position: center 30%;
     overflow: hidden; width: 100%;
   }
@@ -381,6 +387,7 @@
     section { padding: 60px 5vw; }
   }
 </style>
+<link href="/assets/site.css" rel="stylesheet">
 </head>
 <body>
 
@@ -388,14 +395,13 @@
 
 <header>
   <a class="brand" href="/" aria-label="Creative Ballet Academy home">
-    <img src="../assets/logo-header.png?v=13" alt="Creative Ballet Academy logo" width="48" height="48">
+    <img src="/assets/logo-header-96.png" alt="Creative Ballet Academy logo" width="48" height="48">
     <span class="brand-name">Creative Ballet Academy</span>
   </a>
   <nav aria-label="Primary navigation">
-    <a href="/#why">Our Dance</a>
-    <a href="/#programs">Programs</a>
-    <a href="/#join">Enroll</a>
-    <a href="/workshops/" aria-current="page">Workshops</a>
+    <a href="/#programs" class="nav-hide-mobile">Classes</a>
+    <a href="/workshops/" class="nav-hide-mobile" aria-current="page">Parties &amp; Workshops</a>
+    <a href="#book" class="nav-cta">Book</a>
     <a href="/he/workshops/" class="lang-switch" id="lang-switch" lang="he" hreflang="he">עברית</a>
   </nav>
 </header>
@@ -602,7 +608,7 @@
       <h2 id="book-heading">Let's Plan Something Beautiful</h2>
       <p>Tell us about your celebration and we'll be in touch to bring it to life.</p>
       <form id="contact-form" class="contact-form" aria-label="Celebration inquiry form">
-        <div style="position:absolute;left:-9999px;top:auto;height:1px;overflow:hidden" aria-hidden="true"><label for="cba-website">Website</label><input id="cba-website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap" aria-hidden="true"><label for="cba-website">Website</label><input id="cba-website" type="text" tabindex="-1" autocomplete="off"></div>
         <div class="form-row">
           <label for="parent-name">Your Name</label>
           <input type="text" id="parent-name" name="parent-name" required>
@@ -619,28 +625,48 @@
         </div>
         <div class="form-row">
           <label for="parent-email">Email</label>
-          <input type="email" id="parent-email" name="parent-email" required>
+          <input type="email" id="parent-email" name="parent-email" autocomplete="email">
         </div>
         <div class="form-row">
           <label for="parent-phone">Phone</label>
-          <input type="tel" id="parent-phone" name="parent-phone">
+          <input type="tel" id="parent-phone" name="parent-phone" autocomplete="tel" inputmode="tel">
         </div>
         <div class="form-row form-row-full">
           <label for="parent-message">Tell us about your celebration</label>
           <textarea id="parent-message" name="parent-message" rows="4" placeholder="Date, number of guests, theme ideas, package…"></textarea>
         </div>
         <button type="submit" class="hero-cta contact-submit">Send Inquiry</button>
-        <p id="contact-form-status" role="status" aria-live="polite" style="margin-top:12px; font-size:0.95rem;"></p>
+        <p id="contact-form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
+      <div class="contact-options">
+        <a href="https://wa.me/972584421987">WhatsApp: 058-442-1987</a>
+        <a href="tel:+972584421987">Call: 058-442-1987</a>
+        <a href="mailto:info@creativeballetacademy.com">info@creativeballetacademy.com</a>
+      </div>
     </div>
   </section>
 
 </main>
 
 <footer>
-  <p class="footer-tagline">Dance Into a World Where Her Heart Can Sing</p>
+  <p class="footer-tagline">Creative Ballet Academy</p>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="/#programs">Classes &amp; times</a>
+    <a href="/#join">Register for classes</a>
+    <a href="#book">Book a celebration</a>
+    <a href="https://wa.me/972584421987">WhatsApp</a>
+    <a href="mailto:info@creativeballetacademy.com">Email</a>
+    <a href="/he/workshops/" lang="he" hreflang="he">עברית</a>
+  </nav>
   <p class="footer-meta">&copy; 2026 Creative Ballet Academy. All rights reserved.</p>
 </footer>
+
+<a class="whatsapp-float" href="https://wa.me/972584421987" aria-label="Message us on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.5 3.9 1.7.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<script src="/assets/site.js" defer></script>
 
 <script>
   // Tabs
@@ -654,50 +680,6 @@
       var panel = document.getElementById(btn.getAttribute('aria-controls'));
       panel.hidden = false;
       panel.classList.add('active');
-    });
-  });
-
-  // Language cookie
-  document.getElementById('lang-switch').addEventListener('click', function () {
-    document.cookie = 'lang_pref=en; path=/; max-age=' + (60 * 60 * 24 * 365);
-  });
-
-  // Contact form
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var statusEl = document.getElementById('contact-form-status');
-    var submitBtn = document.querySelector('.contact-submit');
-    submitBtn.disabled = true;
-    statusEl.style.color = '';
-    statusEl.textContent = 'Sending...';
-
-    fetch('https://acmujrhavgbamdilzuew.supabase.co/functions/v1/crm-lead-capture', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        tenantSubdomain: 'creativeballet',
-        name: document.getElementById('parent-name').value,
-        interest: document.getElementById('event-type').value || null,
-        email: document.getElementById('parent-email').value || null,
-        phone: document.getElementById('parent-phone').value || null,
-        message: document.getElementById('parent-message').value || null,
-        src: 'website',
-        website: (document.getElementById('cba-website') || {}).value || null
-      })
-    }).then(function(res) {
-      submitBtn.disabled = false;
-      if (res.ok) {
-        statusEl.style.color = '#3a6b4a';
-        statusEl.textContent = 'Thank you! Your message has been sent — we\'ll be in touch soon.';
-        document.getElementById('contact-form').reset();
-      } else {
-        statusEl.style.color = '#a4373a';
-        statusEl.textContent = 'Something went wrong. Please email us directly at info@creativeballetacademy.com.';
-      }
-    }).catch(function() {
-      submitBtn.disabled = false;
-      statusEl.style.color = '#a4373a';
-      statusEl.textContent = 'Something went wrong. Please email us directly at info@creativeballetacademy.com.';
     });
   });
 </script>

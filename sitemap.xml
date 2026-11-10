@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://creativeballetacademy.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://creativeballetacademy.com/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://creativeballetacademy.com/he/"/>
+  </url>
+  <url>
+    <loc>https://creativeballetacademy.com/he/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://creativeballetacademy.com/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://creativeballetacademy.com/he/"/>
+  </url>
+  <url>
+    <loc>https://creativeballetacademy.com/workshops/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://creativeballetacademy.com/workshops/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://creativeballetacademy.com/he/workshops/"/>
+  </url>
+  <url>
+    <loc>https://creativeballetacademy.com/he/workshops/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://creativeballetacademy.com/workshops/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://creativeballetacademy.com/he/workshops/"/>
+  </url>
+</urlset>
