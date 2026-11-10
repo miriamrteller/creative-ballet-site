@@ -155,3 +155,13 @@ nav a.nav-cta:hover, nav a.nav-cta:focus { background: #fff; color: #4A3B4D; }
 
 /* Keep section titles clear of the sticky header when jumping to them */
 section[id] { scroll-margin-top: 84px; }
+
+/* Monthly prices */
+.prices { max-width: 640px; margin: 40px auto 0; background: #fdf3f6; border-radius: 18px; padding: 28px 24px; }
+.prices h3 { font-family: 'Playfair Display', 'David Libre', serif; color: #4A3B4D; text-align: center; margin: 0 0 16px; font-size: 1.35rem; }
+.prices table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+.prices th, .prices td { padding: 10px 8px; border-bottom: 1px solid #ecd9e4; text-align: start; }
+.prices thead th { font-size: 0.85rem; color: #5b3d63; }
+.prices tbody th { font-weight: 600; color: #4A3B4D; }
+.prices strong { color: #8a4a76; }
+.prices p { margin: 6px 0 0; }
