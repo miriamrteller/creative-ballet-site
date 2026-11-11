@@ -204,3 +204,7 @@ section[id] { scroll-margin-top: 84px; }
 /* 7 add-ons: wrap and centre the last row */
 .addon-grid { display: flex !important; flex-wrap: wrap; justify-content: center; }
 .addon-grid > * { flex: 0 1 240px; }
+
+/* Header logo (final artwork, white name for the dark header) */
+.brand img.brand-logo { height: 72px; width: auto; }
+@media (max-width: 760px) { .brand img.brand-logo { height: 44px; width: auto; } }
