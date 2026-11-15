@@ -39,6 +39,19 @@
     box.appendChild(open);
   }
 
+  // Once the form is sent, OpalSwift tells this page: shrink the frame to the
+  // thank-you message and scroll it into view, so the visitor sees it.
+  window.addEventListener('message', function (e) {
+    if (e.origin !== OPAL || !e.data || e.data.type !== 'opalswift:form-sent') return;
+    var frames = document.querySelectorAll('.opal-form iframe');
+    for (var k = 0; k < frames.length; k++) {
+      if (frames[k].contentWindow !== e.source) continue;
+      frames[k].style.height = '320px';
+      var box = frames[k].closest('.opal-form') || frames[k];
+      box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+
   // The language button remembers the language the visitor is switching TO.
   var langSwitch = document.getElementById('lang-switch');
   if (langSwitch) {
