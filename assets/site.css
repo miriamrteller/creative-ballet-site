@@ -208,3 +208,12 @@ section[id] { scroll-margin-top: 84px; }
 /* Header logo (final artwork, white name for the dark header) */
 .brand img.brand-logo { height: 72px; width: auto; }
 @media (max-width: 760px) { .brand img.brand-logo { height: 52px; width: auto; } }
+
+/* Repeated "Get notified when classes start" buttons between sections */
+.cta-strip { text-align: center; margin: 36px auto 0; }
+.cta-strip .hero-cta { display: inline-block; }
+.cta-strip p { margin: 10px auto 0; font-size: 0.92rem; opacity: 0.8; max-width: none; }
+.footer-cta { margin: 14px 0 18px; }
+.footer-cta .hero-cta { display: inline-block; }
+footer .footer-cta .hero-cta { background: #f4c8d9; color: #4A3B4D; }
+footer .footer-cta .hero-cta:hover, footer .footer-cta .hero-cta:focus { background: #fff; color: #4A3B4D; }
