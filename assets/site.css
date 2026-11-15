@@ -218,3 +218,8 @@ section[id] { scroll-margin-top: 84px; }
 footer .footer-cta .hero-cta { background: #f4c8d9; color: #4A3B4D; }
 footer .footer-cta .hero-cta:hover, footer .footer-cta .hero-cta:focus { background: #fff; color: #4A3B4D; }
 .opal-form { scroll-margin-top: 110px; }
+
+/* Class cards: centred rows, so 5 classes sit as 3 + 2 (or 2 + 2 + 1), never a lone card off to one side. */
+.program-list { display: flex !important; flex-wrap: wrap; justify-content: center; gap: 24px; }
+.program-list > .program-card { flex: 0 1 260px; }
+@media (max-width: 559px) { .program-list > .program-card { flex-basis: 100%; } }
