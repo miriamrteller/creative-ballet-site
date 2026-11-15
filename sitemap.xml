@@ -2,22 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://creativeballetacademy.com/</loc>
+    <lastmod>2026-11-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://creativeballetacademy.com/"/>
     <xhtml:link rel="alternate" hreflang="he" href="https://creativeballetacademy.com/he/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://creativeballetacademy.com/"/>
   </url>
   <url>
     <loc>https://creativeballetacademy.com/he/</loc>
+    <lastmod>2026-11-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://creativeballetacademy.com/"/>
     <xhtml:link rel="alternate" hreflang="he" href="https://creativeballetacademy.com/he/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://creativeballetacademy.com/"/>
   </url>
   <url>
     <loc>https://creativeballetacademy.com/workshops/</loc>
+    <lastmod>2026-11-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://creativeballetacademy.com/workshops/"/>
     <xhtml:link rel="alternate" hreflang="he" href="https://creativeballetacademy.com/he/workshops/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://creativeballetacademy.com/workshops/"/>
   </url>
   <url>
     <loc>https://creativeballetacademy.com/he/workshops/</loc>
+    <lastmod>2026-11-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://creativeballetacademy.com/workshops/"/>
     <xhtml:link rel="alternate" hreflang="he" href="https://creativeballetacademy.com/he/workshops/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://creativeballetacademy.com/workshops/"/>
   </url>
 </urlset>
