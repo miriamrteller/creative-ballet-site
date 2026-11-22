@@ -3,3 +3,6 @@
 
 /assets/opalswift/*
   Access-Control-Allow-Origin: *
+
+/assets/video/*
+  Cache-Control: public, max-age=604800

@@ -52,6 +52,19 @@
     }
   });
 
+  // Hero video: play only when the visitor's device allows motion and isn't saving data.
+  // Otherwise the still image (poster) stays, so nobody is blocked or distracted.
+  var heroVideo = document.querySelector('video[data-autoplay]');
+  if (heroVideo) {
+    var still = (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) ||
+      (navigator.connection && navigator.connection.saveData);
+    if (!still) {
+      heroVideo.preload = 'auto';
+      var p = heroVideo.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+  }
+
   // The language button remembers the language the visitor is switching TO.
   var langSwitch = document.getElementById('lang-switch');
   if (langSwitch) {
