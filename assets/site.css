@@ -236,3 +236,126 @@ footer .footer-cta .hero-cta:hover, footer .footer-cta .hero-cta:focus { backgro
   line-height: 1.4;
 }
 html[lang="he"] .hero h1 .h1-keywords { font-family: 'Noto Sans Hebrew', sans-serif; letter-spacing: 0; }
+
+/* =====================================================================
+   Brand refresh (November 2026): plum ribbon logo, Alex Brush + Montserrat.
+   Loaded after each page's own <style>, so these rules win.
+   ===================================================================== */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/assets/fonts/montserrat-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AA, U+20AC, U+2122, U+2190-2193, U+2212, U+FEFF;
+}
+
+:root {
+  --plum: #6E3460;
+  --plum-deep: #4E2445;
+  --plum-hover: #5A2A4F;
+  --ribbon: #B66A9A;
+  --blush: #F3D6E5;
+  --blush-soft: #FBF3F7;
+  --rule: #E9D3DF;
+  /* the pages' own colour names, re-pointed at the new palette */
+  --sky-blue: #E6C9D9;
+  --misty-white: #FBF5F8;
+  --petal-pink: #F3D6E5;
+  --lavender: #E6C9D9;
+  --mint: #F3D6E5;
+  --lilac: #F5E4ED;
+  --text-dark: #43303F;
+  --text-body: #574655;
+}
+
+body { font-family: 'Montserrat', 'Noto Sans Hebrew', sans-serif; color: var(--text-body); background: var(--misty-white); }
+html[lang="he"] body { font-family: 'Noto Sans Hebrew', 'Montserrat', sans-serif; }
+::selection { background: var(--blush); color: var(--text-dark); }
+
+/* Headings: script for section titles, clean Montserrat for card titles */
+h2 { font-family: 'Alex Brush', cursive; font-weight: 400; color: var(--plum); font-size: clamp(2.6rem, 6vw, 3.6rem); line-height: 1.1; margin-bottom: 16px; }
+html[lang="he"] h2 { font-family: 'David Libre', serif; font-weight: 700; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+.why-card h3, .program-card h3, .audience-card h3, .price-card h3, .theme-card h4, .prices h3, .steps h3, .addon-card h3, .addon-card h4 {
+  font-family: 'Montserrat', 'Noto Sans Hebrew', sans-serif; font-weight: 600; color: var(--text-dark);
+}
+html[lang="he"] :is(.why-card h3, .program-card h3, .audience-card h3, .price-card h3, .theme-card h4, .prices h3, .steps h3, .addon-card h3, .addon-card h4) { font-family: 'Noto Sans Hebrew', 'Montserrat', sans-serif; }
+.why-card h3 { font-size: 0.95rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--plum); }
+html[lang="he"] .why-card h3 { font-size: 1.2rem; letter-spacing: 0; }
+.price-card .price { font-family: 'Montserrat', sans-serif; font-weight: 600; color: var(--plum); }
+
+/* Header: plum bar with the monogram lockup */
+header { background: var(--plum) !important; box-shadow: 0 1px 0 rgba(255,255,255,0.08); }
+.brand img.brand-logo { height: 60px; width: auto; }
+nav a { color: var(--blush); }
+nav a:hover, nav a:focus { color: #fff; }
+nav a.nav-cta { background: var(--blush); color: var(--plum); }
+nav a.nav-cta:hover, nav a.nav-cta:focus { background: #fff; color: var(--plum); }
+.lang-switch { border-color: rgba(243,214,229,0.6); }
+
+/* Hero: blush ground, a faint satin CB, the full logo */
+.hero {
+  background: var(--blush-soft) url(/assets/monogram-watermark.svg) no-repeat right -140px center / 720px auto !important;
+  border-bottom: 1px solid var(--rule);
+}
+html[dir="rtl"] .hero, html[lang="he"] .hero { background-position: left -140px center !important; }
+.hero-logo { display: block; width: min(440px, 78vw); height: auto; margin: 0 auto 18px; }
+.hero-logo + h1 .h1-brand { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.hero h1 { color: var(--plum); text-shadow: none; }
+.hero h1 .h1-keywords { color: var(--text-dark); }
+.hero .tagline { font-family: 'Montserrat', sans-serif; font-style: normal; font-weight: 500; font-size: clamp(0.85rem, 1.6vw, 1rem); letter-spacing: 0.34em; text-transform: uppercase; color: var(--plum); text-shadow: none; margin: 14px 0 12px; }
+html[lang="he"] .hero .tagline { font-family: 'Noto Sans Hebrew', sans-serif; letter-spacing: 0.12em; font-size: clamp(1rem, 2vw, 1.2rem); }
+.hero .subhead { font-family: 'Montserrat', 'Noto Sans Hebrew', sans-serif; font-style: normal; font-weight: 400; font-size: clamp(1.02rem, 2vw, 1.2rem); color: var(--text-body); text-shadow: none; max-width: 720px; margin-left: auto; margin-right: auto; }
+html[lang="he"] .hero .subhead { font-family: 'Noto Sans Hebrew', sans-serif; }
+.hero-badge { background: #fff; color: var(--plum); border: 1px solid var(--rule); }
+
+/* Buttons */
+.hero-cta { background: var(--plum); font-weight: 600; letter-spacing: 0.02em; box-shadow: 0 8px 20px rgba(110,52,96,0.28); }
+.hero-cta:hover, .hero-cta:focus { background: var(--plum-hover); box-shadow: 0 10px 26px rgba(110,52,96,0.38); }
+.btn-outline { color: var(--plum); border-color: var(--plum); font-weight: 600; }
+.btn-outline:hover, .btn-outline:focus { background: var(--blush-soft); }
+.tab-btn { font-family: inherit; border-color: var(--rule); }
+.tab-btn:hover { background: var(--blush-soft); }
+.tab-btn.active { background: var(--plum); color: #fff; border-color: var(--plum); }
+
+/* Cards */
+.why-card, .audience-card { border-top: 3px solid var(--plum); box-shadow: 0 6px 20px rgba(67,48,63,0.07); }
+.why-card:nth-child(2), .audience-card:nth-child(2) { border-top-color: var(--ribbon); }
+.why-card:nth-child(3), .audience-card:nth-child(3) { border-top-color: var(--blush); }
+.program-card { border: 1px solid var(--rule); }
+.program-card .age, .audience-card .aud-age { background: var(--blush); color: var(--plum); }
+.price-card.featured { border-color: var(--plum); box-shadow: 0 10px 30px rgba(110,52,96,0.16); }
+.featured-badge { background: var(--plum); color: #fff; }
+.price-card .launch { background: var(--blush); color: var(--plum); }
+.price-card ul li::before { color: var(--ribbon); }
+.theme-card { border-left-color: var(--ribbon); }
+html[dir="rtl"] .theme-card { border-right-color: var(--ribbon); }
+.steps li::before { background: var(--plum); color: #fff; }
+.prices strong, .other-ages summary { color: var(--plum); }
+.other-ages summary { border-color: var(--rule); }
+.faq summary::after { color: var(--plum); }
+.contact-form label.check input { accent-color: var(--plum); }
+
+/* Sign-up panel: plum, with the form card inside */
+.cta-section { background: var(--plum) url(/assets/monogram-watermark-on-dark.svg) no-repeat right -90px bottom -120px / 460px auto; color: #fff; }
+html[lang="he"] .cta-section { background-position: left -90px bottom -120px; }
+.cta-section h2 { color: #fff; }
+.cta-section p { color: var(--blush); }
+.cta-section .contact-options a, .cta-section .opal-form-open { color: #fff; }
+
+/* Footer */
+footer { background: var(--plum-deep); color: #F6E9F0; }
+footer .footer-tagline { margin: 0 0 18px; }
+footer .footer-tagline img { display: block; margin: 0 auto; width: 200px; height: auto; }
+.footer-links a, .rad-badge { color: var(--blush); }
+footer .footer-cta .hero-cta { background: var(--blush); color: var(--plum); }
+footer .footer-cta .hero-cta:hover, footer .footer-cta .hero-cta:focus { background: #fff; color: var(--plum); }
+
+@media (max-width: 760px) {
+  .brand img.brand-logo { height: 44px; width: auto; }
+  .hero { background-size: 420px auto !important; background-position: right -150px top 40px !important; }
+  html[lang="he"] .hero { background-position: left -150px top 40px !important; }
+  .hero-logo { width: min(300px, 76vw); }
+}
+@media (min-width: 761px) { .hero { padding-top: 96px; padding-bottom: 110px; } }
+.hero { max-width: none !important; margin: 0 !important; width: 100%; }
