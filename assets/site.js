@@ -52,16 +52,39 @@
     }
   });
 
-  // Hero video: play only when the visitor's device allows motion and isn't saving data.
-  // Otherwise the still image (poster) stays, so nobody is blocked or distracted.
+  // Hero video: a short muted loop. It plays only while the top of the page is on screen
+  // and the tab is visible (so it uses no memory or battery otherwise), and stays as a still
+  // image when the device asks for reduced motion or data saving.
   var heroVideo = document.querySelector('video[data-autoplay]');
   if (heroVideo) {
-    var still = (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) ||
-      (navigator.connection && navigator.connection.saveData);
-    if (!still) {
-      heroVideo.preload = 'auto';
+    heroVideo.muted = true; // some browsers only allow muted autoplay when set as a property too
+    var stillOnly = (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) ||
+      (navigator.connection && navigator.connection.saveData === true);
+    var onScreen = true;
+    var tryPlay = function () {
+      if (stillOnly || !onScreen || document.hidden) return;
       var p = heroVideo.play();
       if (p && p.catch) p.catch(function () {});
+    };
+    if (stillOnly) {
+      heroVideo.removeAttribute('autoplay');
+      heroVideo.pause();
+    } else {
+      tryPlay();
+      // if the browser held it back (e.g. battery saver), start on the first touch or scroll
+      var kick = function () { tryPlay(); };
+      ['touchstart', 'click', 'scroll', 'keydown'].forEach(function (ev) {
+        window.addEventListener(ev, kick, { once: true, passive: true });
+      });
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          onScreen = entries[0].isIntersecting;
+          if (onScreen) tryPlay(); else heroVideo.pause();
+        }, { threshold: 0.05 }).observe(heroVideo);
+      }
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) heroVideo.pause(); else tryPlay();
+      });
     }
   }
 
