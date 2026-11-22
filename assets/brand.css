@@ -78,3 +78,12 @@ html[lang="he"] .hero .tagline { font-size: clamp(1.1rem, 2.2vw, 1.4rem); }
 .cta-section p { color: var(--text-dark); }
 .contact-form input:focus, .contact-form textarea:focus { outline-color: var(--ribbon-highlight); }
 summary { color: var(--deep-plum); }
+
+/* "Have any other questions?" box under the FAQ */
+.faq-ask { max-width: 640px; margin: 40px auto 0; padding: 28px 24px 20px; background: var(--soft-blush); border: 1px solid var(--blush); border-radius: 18px; text-align: center; }
+.faq-ask h3 { margin: 0 0 6px; font-size: 1.3rem; }
+.faq-ask p { margin: 0 auto 8px; }
+.faq-ask .opal-form iframe { height: 1080px; }
+@media (max-width: 600px) { .faq-ask .opal-form iframe { height: 1320px; } }
+@media (max-width: 400px) { .faq-ask .opal-form iframe { height: 1440px; } }
+.faq-ask .opal-form-open { display: inline-block; margin-top: 10px; font-size: 0.9rem; color: #43303F; }
