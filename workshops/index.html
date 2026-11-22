@@ -90,11 +90,12 @@
 </script>
 
 <link rel="icon" type="image/svg+xml" href="/assets/icon.svg">
+<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#4A3B4D">
-<link href="/assets/fonts/fonts-1.css" rel="stylesheet">
+<meta name="theme-color" content="#6E3460">
+<link href="/assets/fonts/fonts-brand.css" rel="stylesheet">
 <style>
   :root {
     --sky-blue: #A4C8E1;
@@ -103,7 +104,7 @@
     --lavender: #E0C3E8;
     --mint: #A5E1DA;
     --lilac: #D6C6E9;
-    --text-dark: #4A3B4D;
+    --text-dark: #43303F;
     --text-body: #5A4E5C;
   }
 
@@ -111,7 +112,7 @@
   html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--text-body);
     background: var(--misty-white);
     line-height: 1.6;
@@ -163,14 +164,14 @@
     text-shadow: 0 2px 18px rgba(255,255,255,0.7);
   }
   .hero .subhead {
-    font-family: 'Playfair Display', serif; font-style: italic;
+    font-family: 'Alex Brush', cursive;
     font-size: clamp(1.2rem, 2.6vw, 1.7rem); color: #33475a;
     margin: 0 auto 36px; max-width: 760px;
     text-shadow: 0 1px 10px rgba(255,255,255,0.6);
   }
 
   .hero-cta {
-    display: inline-block; background: #8a4a76; color: #fff;
+    display: inline-block; background: #6E3460; color: #fff;
     text-decoration: none; font-weight: 700; padding: 16px 40px;
     border-radius: 999px; font-size: 1.05rem;
     box-shadow: 0 8px 20px rgba(138,74,118,0.35);
@@ -184,7 +185,7 @@
 
   section { padding: 80px 6vw; max-width: 1100px; margin: 0 auto; }
   h2 {
-    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
     color: var(--text-dark); text-align: center;
     font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 12px;
   }
@@ -203,7 +204,7 @@
   .audience-card:nth-child(2) { border-top-color: var(--lavender); }
   .audience-card:nth-child(3) { border-top-color: var(--mint); }
   .audience-card h3 {
-    font-family: 'Playfair Display', serif; color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif; color: var(--text-dark);
     font-size: 1.4rem; margin: 0 0 8px;
   }
   .audience-card .aud-age {
@@ -237,12 +238,12 @@
     padding: 5px 18px; border-radius: 999px; text-transform: uppercase;
   }
   .price-card h3 {
-    font-family: 'Playfair Display', serif; color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif; color: var(--text-dark);
     font-size: 1.5rem; margin: 0 0 4px;
   }
   .price-card .duration { font-size: 0.92rem; color: var(--text-body); font-weight: 600; margin-bottom: 16px; }
   .price-card .price {
-    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
     font-size: 2.6rem; color: var(--text-dark); line-height: 1; margin-bottom: 4px;
   }
   .price-card .price .cur { font-size: 1.3rem; vertical-align: top; }
@@ -274,7 +275,7 @@
   }
   .tab-btn {
     border: 2px solid var(--lavender); background: #fff; color: var(--text-dark);
-    font-family: 'Source Sans Pro', sans-serif; font-weight: 700; font-size: 1rem;
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem;
     padding: 12px 26px; border-radius: 999px; cursor: pointer;
     transition: all 0.2s ease;
   }
@@ -292,12 +293,12 @@
     border-left: 4px solid var(--sky-blue);
   }
   .theme-card h4 {
-    font-family: 'Playfair Display', serif; color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif; color: var(--text-dark);
     font-size: 1.12rem; margin: 0 0 6px;
   }
   .theme-card p { margin: 0 0 10px; font-size: 0.92rem; }
-  .theme-card .games { font-size: 0.85rem; color: var(--text-body); }
-  .theme-card .games strong { color: var(--text-dark); font-weight: 600; }
+  .theme-card .activities { font-size: 0.85rem; color: var(--text-body); }
+  .theme-card .activities strong { color: var(--text-dark); font-weight: 600; }
 
   /* Add-ons */
   .addons { background: #fff; }
@@ -308,23 +309,23 @@
     background: var(--misty-white); border-radius: 16px; padding: 26px 22px; text-align: center;
   }
   .addon-card h4 {
-    font-family: 'Playfair Display', serif; color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif; color: var(--text-dark);
     font-size: 1.15rem; margin: 0 0 6px;
   }
-  .addon-card .addon-price { font-weight: 700; color: #8a4a76; font-size: 1.05rem; margin-bottom: 8px; }
+  .addon-card .addon-price { font-weight: 700; color: #6E3460; font-size: 1.05rem; margin-bottom: 8px; }
   .addon-card p { margin: 0; font-size: 0.9rem; }
   .bundle-banner {
     margin-top: 34px; background: linear-gradient(160deg, var(--lavender) 0%, var(--sky-blue) 100%);
     border-radius: 20px; padding: 30px 28px; text-align: center;
   }
-  .bundle-banner h4 { font-family: 'Playfair Display', serif; color: var(--text-dark); font-size: 1.3rem; margin: 0 0 6px; }
+  .bundle-banner h4 { font-family: 'Montserrat', sans-serif; color: var(--text-dark); font-size: 1.3rem; margin: 0 0 6px; }
   .bundle-banner p { margin: 0; color: #3f2f47; }
 
   .ideas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .idea-block {
     background: #fff; border: 1px solid #ecd7e4; border-radius: 18px; padding: 24px 24px;
   }
-  .idea-block h4 { font-family: 'Playfair Display', serif; color: var(--text-dark); font-size: 1.15rem; margin: 0 0 12px; }
+  .idea-block h4 { font-family: 'Montserrat', sans-serif; color: var(--text-dark); font-size: 1.15rem; margin: 0 0 12px; }
   .idea-block ul { margin: 0; padding-left: 20px; color: var(--text-dark); }
   .idea-block li { font-size: 0.95rem; margin-bottom: 7px; line-height: 1.4; }
   @media (max-width: 760px) { .ideas-grid { grid-template-columns: 1fr; } }
@@ -335,7 +336,7 @@
     box-shadow: 0 4px 14px rgba(74,59,77,0.06);
   }
   .faq-item h3 {
-    font-family: 'Playfair Display', serif; color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif; color: var(--text-dark);
     font-size: 1.15rem; margin: 0 0 8px;
   }
   .faq-item p { margin: 0; font-size: 0.98rem; }
@@ -363,7 +364,7 @@
   }
   .contact-form input, .contact-form select, .contact-form textarea {
     width: 100%; padding: 12px 14px; border-radius: 10px;
-    border: 1px solid #d9c3d3; font-family: 'Source Sans Pro', sans-serif;
+    border: 1px solid #d9c3d3; font-family: 'Montserrat', sans-serif;
     font-size: 1rem; background: #fff; color: var(--text-dark);
   }
   .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
@@ -388,6 +389,7 @@
   }
 </style>
 <link href="/assets/site.css" rel="stylesheet">
+<link href="/assets/brand.css" rel="stylesheet">
 </head>
 <body>
 
@@ -395,7 +397,7 @@
 
 <header>
   <a class="brand" href="/" aria-label="Creative Ballet Academy home">
-    <img class="brand-logo" src="/assets/logo-on-dark.svg" alt="Creative Ballet Academy" width="185" height="72">
+    <img class="brand-logo" src="/assets/logo-white.svg" alt="Creative Ballet Academy" width="127" height="84">
   </a>
   <nav aria-label="Primary navigation">
     <a href="/#programs" class="nav-hide-mobile">Classes</a>
@@ -498,43 +500,43 @@
 
       <div class="tab-panel active" role="tabpanel" id="tab-kids" aria-labelledby="btn-kids">
         <div class="theme-grid">
-          <div class="theme-card"><h4>Mimi &amp; Simi's Birthday Adventure</h4><p>A whimsical story journey with two birthday friends.</p><p class="games"><strong>Activities:</strong> Surprise Twist · Balloon Flutter</p></div>
-          <div class="theme-card"><h4>Chanuka Glow</h4><p>Dancing in the warm light of the candles.</p><p class="games"><strong>Activities:</strong> Candlelit Dreams · Dreidel Spin</p></div>
-          <div class="theme-card"><h4>Purim Parade</h4><p>A festive royal procession of costumes and joy.</p><p class="games"><strong>Activities:</strong> Royal Walk · Costume Whirl</p></div>
-          <div class="theme-card"><h4>Under the Sea</h4><p>Exploring ocean wonders beneath the waves.</p><p class="games"><strong>Activities:</strong> Dolphin Leap · Starfish Stretch</p></div>
-          <div class="theme-card"><h4>Ship &amp; Treasure</h4><p>Sailing the seas in search of hidden treasure.</p><p class="games"><strong>Activities:</strong> Captain's Dance · Treasure Island Twirl</p></div>
-          <div class="theme-card"><h4>Over the Mountain</h4><p>Climbing together to new heights.</p><p class="games"><strong>Activities:</strong> Echo Call · Summit Springs</p></div>
-          <div class="theme-card"><h4>Princess Dance</h4><p>A royal kingdom tale brought to life.</p><p class="games"><strong>Activities:</strong> Tiara Glide · Kingdom Journey</p></div>
-          <div class="theme-card"><h4>Any Story You Love</h4><p>Bring a favourite children's story and we'll dance it together.</p><p class="games"><strong>Activities:</strong> Tailored to your story</p></div>
-          <div class="theme-card"><h4>Enchanted Garden Fairies</h4><p>Fluttering through a magical garden in bloom.</p><p class="games"><strong>Activities:</strong> Fairy Flight · Blossom Twirl</p></div>
+          <div class="theme-card"><h4>Mimi &amp; Simi's Birthday Adventure</h4><p>A whimsical story journey with two birthday friends.</p><p class="activities"><strong>Activities:</strong> Surprise Twist · Balloon Flutter</p></div>
+          <div class="theme-card"><h4>Chanuka Glow</h4><p>Dancing in the warm light of the candles.</p><p class="activities"><strong>Activities:</strong> Candlelit Dreams · Dreidel Spin</p></div>
+          <div class="theme-card"><h4>Purim Parade</h4><p>A festive royal procession of costumes and joy.</p><p class="activities"><strong>Activities:</strong> Royal Walk · Costume Whirl</p></div>
+          <div class="theme-card"><h4>Under the Sea</h4><p>Exploring ocean wonders beneath the waves.</p><p class="activities"><strong>Activities:</strong> Dolphin Leap · Starfish Stretch</p></div>
+          <div class="theme-card"><h4>Ship &amp; Treasure</h4><p>Sailing the seas in search of hidden treasure.</p><p class="activities"><strong>Activities:</strong> Captain's Dance · Treasure Island Twirl</p></div>
+          <div class="theme-card"><h4>Over the Mountain</h4><p>Climbing together to new heights.</p><p class="activities"><strong>Activities:</strong> Echo Call · Summit Springs</p></div>
+          <div class="theme-card"><h4>Princess Dance</h4><p>A royal kingdom tale brought to life.</p><p class="activities"><strong>Activities:</strong> Tiara Glide · Kingdom Journey</p></div>
+          <div class="theme-card"><h4>Any Story You Love</h4><p>Bring a favourite children's story and we'll dance it together.</p><p class="activities"><strong>Activities:</strong> Tailored to your story</p></div>
+          <div class="theme-card"><h4>Enchanted Garden Fairies</h4><p>Fluttering through a magical garden in bloom.</p><p class="activities"><strong>Activities:</strong> Fairy Flight · Blossom Twirl</p></div>
         </div>
       </div>
 
       <div class="tab-panel" role="tabpanel" id="tab-bat" aria-labelledby="btn-bat" hidden>
         <div class="theme-grid">
-          <div class="theme-card"><h4>Shabbos Splendor</h4><p>The grace and calm of Shabbos in movement.</p><p class="games"><strong>Activities:</strong> Candle Illumination · Tableau of Togetherness</p></div>
-          <div class="theme-card"><h4>Regal Reflections</h4><p>A mature princess theme — regal grace and poise.</p><p class="games"><strong>Activities:</strong> Path of Grace · Ballroom Spirals</p></div>
-          <div class="theme-card"><h4>Seasonal Essence</h4><p>The beauty of each season, danced.</p><p class="games"><strong>Activities:</strong> Spring Blossom Leap · Winter Glide</p></div>
-          <div class="theme-card"><h4>Eternal Bonds</h4><p>Celebrating friendship and this milestone together.</p><p class="games"><strong>Activities:</strong> Circle of Support · Tale in Motion</p></div>
-          <div class="theme-card"><h4>Movement Wonder</h4><p>Exploring size, weight, and direction through creative movement.</p><p class="games"><strong>Activities:</strong> Dynamic Pathways · Light &amp; Form</p></div>
-          <div class="theme-card"><h4>Chanuka Radiance</h4><p>The spirit of enduring light.</p><p class="games"><strong>Activities:</strong> Trail of Light · Festival Radiance</p></div>
-          <div class="theme-card"><h4>Melodic Reverie</h4><p>Dancing to a meaningful, favourite song.</p><p class="games"><strong>Activities:</strong> Melodious Steps · Poetic Leap</p></div>
-          <div class="theme-card"><h4>Tradition's Journey</h4><p>Heritage and story expressed through dance.</p><p class="games"><strong>Activities:</strong> Blessing Rhythms · Historic Cadence</p></div>
-          <div class="theme-card"><h4>Starry Night Dreams</h4><p>Dancing beneath a sky full of dreams and possibility.</p><p class="games"><strong>Activities:</strong> Constellation Flow · Moonbeam Waltz</p></div>
+          <div class="theme-card"><h4>Shabbos Splendor</h4><p>The grace and calm of Shabbos in movement.</p><p class="activities"><strong>Activities:</strong> Candle Illumination · Tableau of Togetherness</p></div>
+          <div class="theme-card"><h4>Regal Reflections</h4><p>A mature princess theme — regal grace and poise.</p><p class="activities"><strong>Activities:</strong> Path of Grace · Ballroom Spirals</p></div>
+          <div class="theme-card"><h4>Seasonal Essence</h4><p>The beauty of each season, danced.</p><p class="activities"><strong>Activities:</strong> Spring Blossom Leap · Winter Glide</p></div>
+          <div class="theme-card"><h4>Eternal Bonds</h4><p>Celebrating friendship and this milestone together.</p><p class="activities"><strong>Activities:</strong> Circle of Support · Tale in Motion</p></div>
+          <div class="theme-card"><h4>Movement Wonder</h4><p>Exploring size, weight, and direction through creative movement.</p><p class="activities"><strong>Activities:</strong> Dynamic Pathways · Light &amp; Form</p></div>
+          <div class="theme-card"><h4>Chanuka Radiance</h4><p>The spirit of enduring light.</p><p class="activities"><strong>Activities:</strong> Trail of Light · Festival Radiance</p></div>
+          <div class="theme-card"><h4>Melodic Reverie</h4><p>Dancing to a meaningful, favourite song.</p><p class="activities"><strong>Activities:</strong> Melodious Steps · Poetic Leap</p></div>
+          <div class="theme-card"><h4>Tradition's Journey</h4><p>Heritage and story expressed through dance.</p><p class="activities"><strong>Activities:</strong> Blessing Rhythms · Historic Cadence</p></div>
+          <div class="theme-card"><h4>Starry Night Dreams</h4><p>Dancing beneath a sky full of dreams and possibility.</p><p class="activities"><strong>Activities:</strong> Constellation Flow · Moonbeam Waltz</p></div>
         </div>
       </div>
 
       <div class="tab-panel" role="tabpanel" id="tab-women" aria-labelledby="btn-women" hidden>
         <div class="theme-grid">
-          <div class="theme-card"><h4>Rosh Chodesh Renewal</h4><p>New beginnings, honoured each month.</p><p class="games"><strong>Activities:</strong> Moonlit Steps · Eternal Circle</p></div>
-          <div class="theme-card"><h4>Serene Seasons</h4><p>Finding peace in the rhythm of each season.</p><p class="games"><strong>Activities:</strong> Autumn Waltz · Summer Breeze Sweep</p></div>
-          <div class="theme-card"><h4>Ease in Movement</h4><p>Exploring size, weight, and direction with freedom.</p><p class="games"><strong>Activities:</strong> Air's Light · Earth &amp; Sky Flow</p></div>
-          <div class="theme-card"><h4>Relax · Recharge · Reenergize</h4><p>A calming wellness escape through movement.</p><p class="games"><strong>Activities:</strong> Peaceful Harmony · Revitalizing Motion</p></div>
-          <div class="theme-card"><h4>Endless Grace</h4><p>Timeless elegance in every step.</p><p class="games"><strong>Activities:</strong> Velvet Rhythms · Verses in Steps</p></div>
-          <div class="theme-card"><h4>Harmony in Balance</h4><p>Where strength meets serenity.</p><p class="games"><strong>Activities:</strong> Balanced Elegance · Circle of Unity</p></div>
-          <div class="theme-card"><h4>Celebration of Joy</h4><p>Festive traditions brought alive.</p><p class="games"><strong>Activities:</strong> Spiral of Joy · Tradition's Tribute</p></div>
-          <div class="theme-card"><h4>Creative Streams</h4><p>Artistry and personal expression through movement.</p><p class="games"><strong>Activities:</strong> Innovative Journeys · Motion's Palette</p></div>
-          <div class="theme-card"><h4>Quiet Waters</h4><p>A gentle, flowing practice for deep rest and renewal.</p><p class="games"><strong>Activities:</strong> River Flow · Still &amp; Soft</p></div>
+          <div class="theme-card"><h4>Rosh Chodesh Renewal</h4><p>New beginnings, honoured each month.</p><p class="activities"><strong>Activities:</strong> Moonlit Steps · Eternal Circle</p></div>
+          <div class="theme-card"><h4>Serene Seasons</h4><p>Finding peace in the rhythm of each season.</p><p class="activities"><strong>Activities:</strong> Autumn Waltz · Summer Breeze Sweep</p></div>
+          <div class="theme-card"><h4>Ease in Movement</h4><p>Exploring size, weight, and direction with freedom.</p><p class="activities"><strong>Activities:</strong> Air's Light · Earth &amp; Sky Flow</p></div>
+          <div class="theme-card"><h4>Relax · Recharge · Reenergize</h4><p>A calming wellness escape through movement.</p><p class="activities"><strong>Activities:</strong> Peaceful Harmony · Revitalizing Motion</p></div>
+          <div class="theme-card"><h4>Endless Grace</h4><p>Timeless elegance in every step.</p><p class="activities"><strong>Activities:</strong> Velvet Rhythms · Verses in Steps</p></div>
+          <div class="theme-card"><h4>Harmony in Balance</h4><p>Where strength meets serenity.</p><p class="activities"><strong>Activities:</strong> Balanced Elegance · Circle of Unity</p></div>
+          <div class="theme-card"><h4>Celebration of Joy</h4><p>Festive traditions brought alive.</p><p class="activities"><strong>Activities:</strong> Spiral of Joy · Tradition's Tribute</p></div>
+          <div class="theme-card"><h4>Creative Streams</h4><p>Artistry and personal expression through movement.</p><p class="activities"><strong>Activities:</strong> Innovative Journeys · Motion's Palette</p></div>
+          <div class="theme-card"><h4>Quiet Waters</h4><p>A gentle, flowing practice for deep rest and renewal.</p><p class="activities"><strong>Activities:</strong> River Flow · Still &amp; Soft</p></div>
         </div>
       </div>
     </div>
