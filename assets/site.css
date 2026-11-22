@@ -3,11 +3,11 @@
 /* Header "Enroll" button */
 nav a.nav-cta {
   background: #f4c8d9;
-  color: #4A3B4D;
+  color: #43303F;
   padding: 7px 16px;
   border-radius: 999px;
 }
-nav a.nav-cta:hover, nav a.nav-cta:focus { background: #fff; color: #4A3B4D; }
+nav a.nav-cta:hover, nav a.nav-cta:focus { background: #fff; color: #43303F; }
 
 /* Small line above the hero title */
 .hero-badge {
@@ -32,12 +32,12 @@ nav a.nav-cta:hover, nav a.nav-cta:focus { background: #fff; color: #4A3B4D; }
 .btn-outline {
   display: inline-block;
   background: #fff;
-  color: #4A3B4D;
+  color: #43303F;
   text-decoration: none;
   font-weight: 700;
   padding: 14px 30px;
   border-radius: 999px;
-  border: 2px solid #8a4a76;
+  border: 2px solid #6E3460;
   font-size: 1rem;
 }
 .btn-outline:hover, .btn-outline:focus { background: #fdf3f6; }
@@ -68,11 +68,11 @@ nav a.nav-cta:hover, nav a.nav-cta:focus { background: #fff; color: #4A3B4D; }
   height: 36px;
   border-radius: 50%;
   background: #E0C3E8;
-  color: #4A3B4D;
+  color: #43303F;
   font-weight: 700;
   margin-bottom: 12px;
 }
-.steps h3 { margin: 0 0 8px; color: #4A3B4D; font-size: 1.15rem; }
+.steps h3 { margin: 0 0 8px; color: #43303F; font-size: 1.15rem; }
 .steps p { margin: 0; }
 
 /* Contact options under the form */
@@ -84,7 +84,7 @@ nav a.nav-cta:hover, nav a.nav-cta:focus { background: #fff; color: #4A3B4D; }
   margin-top: 28px;
   font-weight: 600;
 }
-.contact-options a { color: #4A3B4D; }
+.contact-options a { color: #43303F; }
 
 .cta-section .form-hint { font-size: 0.85rem; opacity: 0.85; margin: 6px 0 0; max-width: none; text-align: start; }
 .contact-submit { font-family: inherit; }
@@ -96,7 +96,7 @@ nav a.nav-cta:hover, nav a.nav-cta:focus { background: #fff; color: #4A3B4D; }
   border: 1px solid #d9c3d3;
   font: inherit;
   background: #fff;
-  color: #4A3B4D;
+  color: #43303F;
 }
 
 .cta-section .form-status { margin: 12px 0 0; max-width: none; font-size: 0.95rem; grid-column: 1 / -1; text-align: center; }
@@ -158,36 +158,36 @@ section[id] { scroll-margin-top: 84px; }
 
 /* Monthly prices */
 .prices { max-width: 640px; margin: 40px auto 0; background: #fdf3f6; border-radius: 18px; padding: 28px 24px; }
-.prices h3 { font-family: 'Playfair Display', 'David Libre', serif; color: #4A3B4D; text-align: center; margin: 0 0 16px; font-size: 1.35rem; }
+.prices h3 { font-family: 'Montserrat', 'Noto Sans Hebrew', sans-serif; color: #43303F; text-align: center; margin: 0 0 16px; font-size: 1.35rem; }
 .prices table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
 .prices th, .prices td { padding: 10px 8px; border-bottom: 1px solid #ecd9e4; text-align: start; }
 .prices thead th { font-size: 0.85rem; color: #5b3d63; }
-.prices tbody th { font-weight: 600; color: #4A3B4D; }
-.prices strong { color: #8a4a76; }
+.prices tbody th { font-weight: 600; color: #43303F; }
+.prices strong { color: #6E3460; }
 .prices p { margin: 6px 0 0; }
 
 .contact-form label.check { display: flex; gap: 10px; align-items: flex-start; font-weight: 600; cursor: pointer; }
-.contact-form label.check input { width: 20px; height: 20px; margin-top: 3px; flex: none; accent-color: #8a4a76; }
+.contact-form label.check input { width: 20px; height: 20px; margin-top: 3px; flex: none; accent-color: #6E3460; }
 
 /* FAQ (home pages) */
 .faq { max-width: 820px; }
 .faq details.faq-item { background: #fff; border-radius: 16px; margin-bottom: 12px; box-shadow: 0 4px 14px rgba(74,59,77,0.06); }
-.faq summary { cursor: pointer; padding: 18px 24px; font-weight: 700; color: #4A3B4D; font-size: 1.05rem; list-style: none; position: relative; padding-inline-end: 48px; }
+.faq summary { cursor: pointer; padding: 18px 24px; font-weight: 700; color: #43303F; font-size: 1.05rem; list-style: none; position: relative; padding-inline-end: 48px; }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: "+"; position: absolute; inset-inline-end: 22px; top: 14px; font-size: 1.5rem; color: #8a4a76; }
+.faq summary::after { content: "+"; position: absolute; inset-inline-end: 22px; top: 14px; font-size: 1.5rem; color: #6E3460; }
 .faq details[open] summary::after { content: "–"; }
 .faq details p { margin: 0; padding: 0 24px 20px; }
 
 /* OpalSwift form, embedded */
 .opal-form { max-width: 640px; margin: 28px auto 0; }
 .opal-form iframe { display: block; width: 100%; height: 1320px; border: 0; border-radius: 16px; background: #fff; }
-.cta-section .opal-form-open { display: inline-block; margin-top: 10px; font-size: 0.9rem; color: #4A3B4D; }
+.cta-section .opal-form-open { display: inline-block; margin-top: 10px; font-size: 0.9rem; color: #43303F; }
 @media (max-width: 600px) { .opal-form iframe { height: 1600px; } }
 @media (max-width: 400px) { .opal-form iframe { height: 1750px; } }
 
 /* "Other ages" under the timetable */
 .other-ages { max-width: 640px; margin: 24px auto 0; text-align: center; }
-.other-ages summary { display: inline-block; cursor: pointer; font-weight: 700; color: #8a4a76; padding: 8px 18px; border: 2px solid #E0C3E8; border-radius: 999px; list-style: none; }
+.other-ages summary { display: inline-block; cursor: pointer; font-weight: 700; color: #6E3460; padding: 8px 18px; border: 2px solid #E0C3E8; border-radius: 999px; list-style: none; }
 .other-ages summary::-webkit-details-marker { display: none; }
 .other-ages[open] summary { background: #fdf3f6; }
 .other-ages p { margin: 14px 0 0; }
@@ -215,8 +215,8 @@ section[id] { scroll-margin-top: 84px; }
 .cta-strip p { margin: 10px auto 0; font-size: 0.92rem; opacity: 0.8; max-width: none; }
 .footer-cta { margin: 14px 0 18px; }
 .footer-cta .hero-cta { display: inline-block; }
-footer .footer-cta .hero-cta { background: #f4c8d9; color: #4A3B4D; }
-footer .footer-cta .hero-cta:hover, footer .footer-cta .hero-cta:focus { background: #fff; color: #4A3B4D; }
+footer .footer-cta .hero-cta { background: #f4c8d9; color: #43303F; }
+footer .footer-cta .hero-cta:hover, footer .footer-cta .hero-cta:focus { background: #fff; color: #43303F; }
 .opal-form { scroll-margin-top: 110px; }
 
 /* Class cards: centred rows, so 5 classes sit as 3 + 2 (or 2 + 2 + 1), never a lone card off to one side. */
@@ -229,7 +229,7 @@ footer .footer-cta .hero-cta:hover, footer .footer-cta .hero-cta:focus { backgro
 .hero h1 .h1-keywords {
   display: block;
   margin-top: 6px;
-  font-family: 'Source Sans Pro', 'Noto Sans Hebrew', sans-serif;
+  font-family: 'Montserrat', 'Noto Sans Hebrew', sans-serif;
   font-size: clamp(0.95rem, 2.4vw, 1.2rem);
   font-weight: 600;
   letter-spacing: 0.04em;

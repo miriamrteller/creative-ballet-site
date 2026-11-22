@@ -1,0 +1,80 @@
+/* Creative Ballet Academy brand (brief of 19 Nov 2026). Loaded last on every page, so it
+   overrides the older colours and fonts in each page and in site.css.
+   Plum #6E3460 · deep plum #4E2445 · ribbon plum #7B3B6B · ribbon highlight #B66A9A ·
+   dark text #43303F · blush #F3D6E5 · soft blush #FBF3F7.
+   Fonts: Alex Brush (English headings), Montserrat (body), Noto Sans Hebrew (Hebrew body),
+   Bona Nova (Hebrew headings). */
+:root {
+  --plum: #6E3460;
+  --deep-plum: #4E2445;
+  --ribbon-plum: #7B3B6B;
+  --ribbon-highlight: #B66A9A;
+  --blush: #F3D6E5;
+  --soft-blush: #FBF3F7;
+  --text-dark: #43303F;
+  --text-body: #43303F;
+  --misty-white: #FBF3F7;
+  --petal-pink: #F3D6E5;
+  --lavender: #F3D6E5;
+  --lilac: #F3D6E5;
+  --sky-blue: #FBF3F7;
+  --mint: #B66A9A;
+}
+
+body { font-family: 'Montserrat', sans-serif; color: var(--text-body); background: var(--soft-blush); }
+html[lang="he"] body { font-family: 'Noto Sans Hebrew', 'Montserrat', sans-serif; }
+input, textarea, select, button { font-family: inherit; }
+
+/* Header and footer: plum, with the white logo */
+header, footer { background: var(--plum); }
+nav a, .brand-name { color: var(--blush); }
+.lang-switch { border-color: rgba(243,214,229,0.6); }
+.brand img.brand-logo { height: 84px; width: auto; }
+@media (max-width: 760px) { .brand img.brand-logo { height: 60px; } }
+footer { color: #F7E9F0; }
+footer .footer-tagline { color: var(--blush); }
+
+/* Hero: soft blush with a faint satin CB monogram */
+.hero {
+  background-color: var(--soft-blush);
+  background-image:
+    url(/assets/monogram-satin.svg),
+    linear-gradient(170deg, #FFFFFF 0%, var(--soft-blush) 55%, var(--blush) 140%);
+  background-repeat: no-repeat, no-repeat;
+  background-size: min(560px, 80vw) auto, cover;
+  background-position: right -60px center, center;
+}
+.hero::before {
+  /* keeps the monogram faint: a soft veil over the background image only */
+  content: ""; position: absolute; inset: 0; background: rgba(251,243,247,0.86); pointer-events: none;
+}
+.hero > * { position: relative; }
+.hero h1, .hero h1 .h1-brand { color: var(--plum); text-shadow: none; }
+.hero .tagline {
+  font-family: 'Montserrat', sans-serif; font-style: normal; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.32em; font-size: clamp(0.85rem, 1.6vw, 1.05rem);
+  color: var(--plum); text-shadow: none;
+}
+.hero .subhead { font-family: inherit; font-style: normal; color: var(--text-dark); text-shadow: none; font-size: clamp(1.05rem, 2vw, 1.3rem); }
+.hero-badge { color: var(--deep-plum); }
+
+/* Headings: Alex Brush for section titles, Montserrat for card titles */
+h2 { font-family: 'Alex Brush', cursive; font-weight: 400; color: var(--plum); font-size: clamp(2.4rem, 5.5vw, 3.4rem); }
+h3, .why-card h3, .program-card h3, .prices h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; color: var(--deep-plum); }
+html[lang="he"] h2, html[lang="he"] .cta-section h2 { font-family: 'Bona Nova', serif; font-weight: 700; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+html[lang="he"] h3, html[lang="he"] .why-card h3, html[lang="he"] .program-card h3, html[lang="he"] .prices h3 { font-family: 'Noto Sans Hebrew', sans-serif; }
+html[lang="he"] .hero .tagline, html[lang="he"] .hero h1 .h1-keywords { font-family: 'Bona Nova', serif; letter-spacing: 0.08em; text-transform: none; }
+html[lang="he"] .hero .tagline { font-size: clamp(1.1rem, 2.2vw, 1.4rem); }
+
+/* Buttons and accents */
+.hero-cta { background: var(--plum); box-shadow: 0 8px 20px rgba(110,52,96,0.3); }
+.hero-cta:hover, .hero-cta:focus { background: var(--deep-plum); box-shadow: 0 10px 26px rgba(78,36,69,0.4); }
+.btn-outline { color: var(--plum); border-color: var(--plum); }
+.why-card { border-top-color: var(--ribbon-highlight); box-shadow: 0 6px 20px rgba(67,48,63,0.08); }
+.why-card:nth-child(2) { border-top-color: var(--plum); }
+.why-card:nth-child(3) { border-top-color: var(--blush); }
+.program-card .age { background: var(--blush); color: var(--deep-plum); }
+.cta-section { background: linear-gradient(160deg, var(--blush) 0%, var(--soft-blush) 100%); }
+.cta-section p { color: var(--text-dark); }
+.contact-form input:focus, .contact-form textarea:focus { outline-color: var(--ribbon-highlight); }
+summary { color: var(--deep-plum); }
