@@ -1,0 +1,58 @@
+/* Floating pastel scarves: a soft, slow drift behind the hero and the sign-up box.
+   Pure CSS transforms on small SVGs (no video or GIF), so it is light on phones.
+   Decorative only (aria-hidden), never catches clicks, and stands still for anyone
+   whose device asks for reduced motion. */
+.scarves { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.hero > .scarves, .cta-section > .scarves { position: absolute; }
+.hero, .cta-section { container-type: inline-size; }
+.cta-section { position: relative; overflow: hidden; }
+.cta-section > * { position: relative; }
+
+.scarf {
+  position: absolute; left: 0; top: var(--top, 10%);
+  width: clamp(240px, 40vw, 560px);
+  opacity: var(--o, 0.6);
+  animation: scarf-drift var(--dur, 60s) linear var(--delay, 0s) infinite;
+  will-change: transform;
+}
+.scarf img {
+  display: block; width: 100%; height: auto;
+  animation: scarf-sway var(--sway, 10s) ease-in-out var(--delay, 0s) infinite alternate;
+  transform-origin: 50% 50%;
+}
+@keyframes scarf-drift {
+  from { transform: translateX(-105%); }
+  to   { transform: translateX(calc(100vw + 5%)); transform: translateX(calc(100cqw + 5%)); }
+}
+@keyframes scarf-sway {
+  0%   { transform: translateY(-14px) rotate(var(--r1, -7deg)) scale(var(--fx, 1), 0.86); }
+  50%  { transform: translateY(10px)  rotate(0deg)            scale(var(--fx, 1), 1.08); }
+  100% { transform: translateY(18px)  rotate(var(--r2, 6deg))  scale(var(--fx, 1), 0.94); }
+}
+
+/* Hero: five scarves at different heights, speeds and tilts */
+.hero .scarf.s1 { --top: 4%;  --dur: 64s; --delay: -10s; --sway: 11s; --r1: -9deg; --r2: 4deg;  --o: .62; --x: -6%; }
+.hero .scarf.s2 { --top: 58%; --dur: 78s; --delay: -44s; --sway: 13s; --fx: -1;   --r1: 5deg; --r2: -6deg; --o: .55; --x: 58%; }
+.hero .scarf.s3 { --top: 30%; --dur: 92s; --delay: -70s; --sway: 9s;  --r1: -4deg; --r2: 8deg;  --o: .45; --x: 64%; width: clamp(200px, 30vw, 420px); }
+.hero .scarf.s4 { --top: 72%; --dur: 70s; --delay: -22s; --sway: 12s; --fx: -1;   --r1: -6deg; --r2: 5deg; --o: .5;  --x: 2%; }
+.hero .scarf.s5 { --top: 14%; --dur: 84s; --delay: -58s; --sway: 10s; --r1: 6deg; --r2: -5deg;  --o: .5;  --x: 40%; width: clamp(180px, 26vw, 380px); }
+
+/* Sign-up box: a fainter echo */
+.cta-section .scarf.s1 { --top: 1%;  --dur: 50s; --delay: -20s; --sway: 12s; --o: .4;  --x: -8%; }
+.cta-section .scarf.s2 { --top: 7%;  --dur: 62s; --delay: -44s; --sway: 10s; --fx: -1; --o: .35; --x: 55%; }
+.cta-section .scarf.s3 { --top: auto; bottom: 0; --dur: 70s; --delay: -12s; --sway: 14s; --o: .3;  --x: 70%; width: clamp(180px, 26vw, 360px); }
+
+@media (max-width: 640px) {
+  /* shorter distance on a phone, so a quicker crossing keeps the same gentle pace */
+  .scarf { width: 72vw; animation-duration: calc(var(--dur, 60s) * 0.5); opacity: calc(var(--o, 0.6) + 0.12); }
+  .hero .scarf.s3, .hero .scarf.s5 { width: 52vw; }
+  .hero .scarf.s5, .cta-section .scarf.s3 { display: none; }
+}
+
+/* Motion turned off: the scarves rest in place, still pretty, no movement */
+@media (prefers-reduced-motion: reduce) {
+  .scarf, .scarf img { animation: none; }
+  .scarf { left: var(--x, 0); transform: none; }
+  .scarf img { transform: rotate(var(--r1, -5deg)) scale(var(--fx, 1), 1); }
+}
+@media print { .scarves { display: none; } }
