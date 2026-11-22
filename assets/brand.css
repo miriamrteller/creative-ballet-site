@@ -79,3 +79,8 @@ html[lang="he"] .hero .tagline { font-size: clamp(1.1rem, 2.2vw, 1.4rem); }
 .contact-form input:focus, .contact-form textarea:focus { outline-color: var(--ribbon-highlight); }
 summary { color: var(--deep-plum); }
 
+
+/* Lists inside FAQ answers (e.g. what to wear) */
+.faq details ul { margin: 0; padding: 0 24px 14px; padding-inline-start: 46px; }
+.faq details ul li { margin: 2px 0; }
+.faq details p:has(+ ul), .faq details p:has(+ p) { padding-bottom: 8px; }
