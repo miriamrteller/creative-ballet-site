@@ -237,11 +237,14 @@ footer .footer-cta .hero-cta:hover, footer .footer-cta .hero-cta:focus { backgro
 }
 html[lang="he"] .hero h1 .h1-keywords { font-family: 'Noto Sans Hebrew', sans-serif; letter-spacing: 0; }
 
-/* Mini Ballet (ages 3–5), inside the button under the timetable */
-.mini-ballet[open] { background: #FBF3F7; border-radius: 18px; padding: 0 18px 20px; }
-.mini-ballet .mini-intro { font-size: 1.05rem; }
+/* Mini Ballet (ages 3–5), its own section after the Wednesday classes */
+.mini-ballet { text-align: center; }
 .mini-ballet .mini-points { font-weight: 600; color: #7B3B6B; letter-spacing: 0.02em; }
-.mini-ballet .mini-place { background: #fff; border-radius: 14px; padding: 14px 16px; margin-top: 14px; }
-.mini-ballet .mini-place h3 { margin: 0; font-size: 1.05rem; color: #6E3460; font-family: inherit; }
+.mini-ballet .mini-places { display: grid; gap: 16px; max-width: 860px; margin: 20px auto 0; }
+@media (min-width: 720px) { .mini-ballet .mini-places { grid-template-columns: 1fr 1fr; } }
+.mini-ballet .mini-place { background: #FBF3F7; border: 2px solid #F3D6E5; border-radius: 16px; padding: 18px; }
+.mini-ballet .mini-place h3 { margin: 0; font-size: 1.1rem; color: #6E3460; }
 .mini-ballet .mini-place p { margin: 8px 0 0; }
+.mini-ballet .mini-where { font-size: 0.95rem; color: #43303F; }
 .mini-ballet .mini-full { display: inline-block; font-weight: 700; color: #6E3460; background: #F3D6E5; border-radius: 999px; padding: 3px 12px; font-size: 0.9rem; }
+.mini-ballet a[dir="ltr"] { font-weight: 700; white-space: nowrap; }
