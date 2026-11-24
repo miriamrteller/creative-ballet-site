@@ -280,6 +280,8 @@
     content: "✦"; position: absolute; left: 4px; color: var(--petal-pink); font-size: 0.9rem;
   }
   .price-card .card-cta { margin-top: auto; }
+  #teams .pricing-grid.teams-grid { grid-template-columns: 1fr !important; }
+  @media (min-width: 700px) { #teams .pricing-grid.teams-grid { grid-template-columns: repeat(2, 1fr) !important; } }
   .price-note { text-align: center; font-size: 0.92rem; margin-top: 26px; color: var(--text-body); }
 
   /* Themes tabs */
@@ -502,10 +504,10 @@
   <section id="teams" aria-labelledby="teams-heading">
     <h2 id="teams-heading">Ballet Workshops for Women's Teams</h2>
     <p class="section-intro">A fresh, uplifting change from the usual team event. Your team warms up, learns some real ballet and finishes with a short dance they create together. Everyone laughs, everyone moves, and nobody needs any experience.</p>
-    <div class="pricing-grid" style="max-width:760px;margin:0 auto;">
+    <div class="pricing-grid teams-grid">
       <div class="price-card">
         <h3>Taster Session</h3>
-        <p class="duration">About 45 minutes</p>
+        <p class="duration">20 minutes</p>
         <ul>
           <li>A gentle warm-up and the basics of ballet</li>
           <li>A short group dance to finish</li>
@@ -515,7 +517,7 @@
       </div>
       <div class="price-card">
         <h3>Team Workshop</h3>
-        <p class="duration">About 90 minutes</p>
+        <p class="duration">40 minutes</p>
         <ul>
           <li>Warm-up, ballet technique and graceful movement</li>
           <li>Small groups create and perform their own short dance</li>
