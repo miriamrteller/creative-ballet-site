@@ -275,6 +275,8 @@
     content: "✦"; position: absolute; inset-inline-start: 4px; color: var(--petal-pink); font-size: 0.9rem;
   }
   .price-card .card-cta { margin-top: auto; }
+  #teams .pricing-grid.teams-grid { grid-template-columns: 1fr !important; }
+  @media (min-width: 700px) { #teams .pricing-grid.teams-grid { grid-template-columns: repeat(2, 1fr) !important; } }
   .price-note { text-align: center; font-size: 0.92rem; margin-top: 26px; color: var(--text-body); }
 
   .tabs { max-width: 900px; margin: 0 auto; }
@@ -493,10 +495,10 @@
   <section id="teams" aria-labelledby="teams-heading">
     <h2 id="teams-heading">סדנאות בלט לצוותים של נשים</h2>
     <p class="section-intro">משהו אחר ומרענן לאירוע הצוות הבא. מתחממות, לומדות קצת בלט אמיתי ומסיימות בריקוד קצר שיוצרות יחד. כולן צוחקות, כולן זזות, ולא צריך שום ניסיון.</p>
-    <div class="pricing-grid" style="max-width:760px;margin:0 auto;">
+    <div class="pricing-grid teams-grid">
       <div class="price-card">
         <h3>טעימה מהבלט</h3>
-        <p class="duration">כ־45 דקות</p>
+        <p class="duration">20 דקות</p>
         <ul>
           <li>חימום עדין ויסודות הבלט</li>
           <li>ריקוד קבוצתי קצר לסיום</li>
@@ -506,7 +508,7 @@
       </div>
       <div class="price-card">
         <h3>סדנת צוות</h3>
-        <p class="duration">כ־90 דקות</p>
+        <p class="duration">40 דקות</p>
         <ul>
           <li>חימום, טכניקת בלט ותנועה מלאת חן</li>
           <li>בקבוצות קטנות יוצרות ומציגות ריקוד קצר משלהן</li>
