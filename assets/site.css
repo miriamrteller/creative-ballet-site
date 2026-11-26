@@ -257,3 +257,16 @@ html[lang="he"] .hero h1 .h1-keywords { font-family: 'Noto Sans Hebrew', sans-se
 .mini-ballet .mini-same { margin: 10px 0 0; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: #7B3B6B; }
 .mini-ballet .mini-place { display: flex; flex-direction: column; align-items: center; }
 .mini-ballet .mini-place > p:last-child { margin-top: auto; padding-top: 8px; }
+
+/* Enrol button on each class card (enrolment opens 1 December) */
+.program-card .enrol-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 22px;
+  border-radius: 999px;
+  background: #6E3460;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.program-card .enrol-link:hover, .program-card .enrol-link:focus-visible { background: #4A3B4D; }
